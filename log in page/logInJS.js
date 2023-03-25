@@ -9,7 +9,7 @@ function valid(event){
     let validPasswordRegex =  /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]*$/
 
     if(email.match(validEmailRegex) && password.match(validPasswordRegex)){
-        window.location = ('C:/Users/Admin/Documents/JS/ide per projektin final/To-Do-webebsite/mainPage/mainPage.html')
+        window.location.href = ('mainPage.html')
         document.getElementById('passwordInput').style.border = '1.5px solid green'
         document.getElementById('passwordError').style.display = 'none'
         document.getElementById('emailInput').style.border = '1.5px solid green'
