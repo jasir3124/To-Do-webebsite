@@ -7,11 +7,9 @@ function valid(event){
     let password = document.getElementById('passwordInput').value
     let validEmailRegex =   /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
     let validPasswordRegex =  /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]*$/
-    let passwordShort = 8
-    let passwordLongh = 16 
 
     if(email.match(validEmailRegex) && password.match(validPasswordRegex)){
-        window.location = ('mainPage/mainPage.html')
+        window.location = ('C:/Users/Admin/Documents/JS/ide per projektin final/To-Do-webebsite/mainPage/mainPage.html')
         document.getElementById('passwordInput').style.border = '1.5px solid green'
         document.getElementById('passwordError').style.display = 'none'
         document.getElementById('emailInput').style.border = '1.5px solid green'
