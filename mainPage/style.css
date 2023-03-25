@@ -2,3 +2,18 @@ h1{
     background-color: blueviolet;
     color: white;
 }
+.navLeft{
+    display: grid;
+    padding: 10px;
+    background-color: rgb(243, 240, 240);
+    width: 220px;
+    margin: 30px;
+    border-radius: 10px;
+}
+.link{
+    text-decoration: none;
+    color: black;
+}
+.link:hover{
+    color: #BD10E0;
+}
