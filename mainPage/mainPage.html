@@ -10,15 +10,36 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="navLeft">
-        <div class="navContainer">
-            <!-- TODO fix the links when the files merge -->
-            <h3 class="h1 pb-3">Menu</h3>
-            <a class="link h5 pb-2 active" href="">Home</a>
-            <a class="link h5 pb-2" href="">Sticky wall</a>
-            <button class="burgerMenu h5">More</button>
+
+    <div class="cont">
+        <div class="navLeft">
+            <div class="navContainer">
+                <!-- TODO fix the links when the files merge -->
+                <h3 class="h1 pb-3">Menu</h3>
+                <a class="link h5 pb-2 active" href="">Home</a>
+                <a class="link h5 pb-2" href="">Sticky wall</a>
+                <a href="" class="link h5 pb-2">Premium</a>
+                <a href="" class="link h5 pb-2">Contact</a>
+                <a href="" class="link h5 pb-2">About</a>
+            </div>
+        </div>
+    
+        <div class="ToDo w-100">
+            <div class="toDoInput m-3">
+                <h1 class="h1 ToDoHeader">to-Do list</h1>
+                <div class="toDoInputHolder">
+                    <label for="toDoInput">Add to To-Do</label><br>
+                    <input type="text" class="ToDoInput">
+                    <button class="addToDo">Add</button><br>
+                    <span class="toDoError">Please add a valid item!</span> 
+                </div>
+                <h1 class="h4 listTitle">Task List</h1>
+                <hr>
+                <div class="listContainer"></div>
+            </div>
         </div>
     </div>
+
 
 
     <script src="mainPage.js"></script>

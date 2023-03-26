@@ -28,10 +28,6 @@
 body{
     height: 95vh;
 }
-h1{
-    background-color: blueviolet;
-    color: white;
-}
 .navLeft{
     padding: 15px;
     background-color: rgb(243, 240, 240);
@@ -39,9 +35,17 @@ h1{
     margin: 20px;
     border-radius: 10px;
     height: 100%;
+    border: var(--bs-success) solid 1px;
 }
 .navContainer{
     display: grid;
+}
+.active{
+    font-weight: 700;
+    background-color: rgba(128, 128, 128, 0.5);
+    width: auto;
+    padding: 5px;
+    border-radius: 10px;
 }
 .link{
     text-decoration: none;
@@ -50,25 +54,47 @@ h1{
     color: black;
     width:fit-content;
 }
-.link:hover,
-.burgerMenu:hover{
+.link:hover{
     transform: translateX(30px);
-    color: var(--purple);
-    text-shadow: 0px 0px 31px rgba(189,16,224,1);
-
+    color: var(--bs-success);
+    text-shadow: 0px 0px 31px var(--bs-success);
 }
-.burgerMenu{
+.cont{
+    height: 100%;
+    display: flex;
+}
+.addToDo{
     border: 0;
-    background-color: rgb(243, 240, 240);
-    width: fit-content;
-    text-align: left;
-    transition: transform 250ms;
-    padding: 0;
-}
-.active{
-    font-weight: 700;
-    background-color: rgba(128, 128, 128, 0.5);
-    width: auto;
+    border-radius: 5px;
     padding: 5px;
+    background-color: var(--bs-success);
+}
+.listContainer{
+    min-height: 100%;
+    margin: 30px;
+    background-color: rgba(168, 164, 164, 0.4);
     border-radius: 10px;
+    padding: 10px;
+}
+.listItem{
+    list-style-type: none;
+    margin: 10px;
+    font-size: 20px;
+    border-top: solid 1px;
+    width: 100%;
+}
+.toDoError{
+    color: var(--bs-danger);
+    visibility: hidden;
+}
+.toDoInputHolder{
+    position: absolute;
+    left: 50%;
+}
+.listTitle{
+    margin-top: 130px;
+}
+.ToDoHeader{
+    position: relative;
+    top: 50px;
 }
