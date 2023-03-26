@@ -1,19 +1,74 @@
+
+
+:root{
+    --purple : #BD10E0;
+    --bs-indigo: #6610f2;
+    --bs-blue: #0d6efd;
+    --bs-indigo: #6610f2;
+    --bs-purple: #6f42c1;
+    --bs-pink: #d63384;
+    --bs-red: #dc3545;
+    --bs-orange: #fd7e14;
+    --bs-yellow: #ffc107;
+    --bs-green: #198754;
+    --bs-teal: #20c997;
+    --bs-cyan: #0dcaf0;
+    --bs-white: #fff;
+    --bs-gray: #6c757d;
+    --bs-gray-dark: #343a40;
+    --bs-primary: #0d6efd;
+    --bs-secondary: #6c757d;
+    --bs-success: #198754;
+    --bs-info: #0dcaf0;
+    --bs-warning: #ffc107;
+    --bs-danger: #dc3545;
+    --bs-light: #f8f9fa;
+    --bs-dark: #212529;
+}
+body{
+    height: 95vh;
+}
 h1{
     background-color: blueviolet;
     color: white;
 }
 .navLeft{
-    display: grid;
-    padding: 10px;
+    padding: 15px;
     background-color: rgb(243, 240, 240);
-    width: 220px;
-    margin: 30px;
+    width: 300px;
+    margin: 20px;
     border-radius: 10px;
+    height: 100%;
+}
+.navContainer{
+    display: grid;
 }
 .link{
     text-decoration: none;
+    position: relative;
+    transition: transform 250ms;
     color: black;
+    width:fit-content;
 }
-.link:hover{
-    color: #BD10E0;
+.link:hover,
+.burgerMenu:hover{
+    transform: translateX(30px);
+    color: var(--purple);
+    text-shadow: 0px 0px 31px rgba(189,16,224,1);
+
+}
+.burgerMenu{
+    border: 0;
+    background-color: rgb(243, 240, 240);
+    width: fit-content;
+    text-align: left;
+    transition: transform 250ms;
+    padding: 0;
+}
+.active{
+    font-weight: 700;
+    background-color: rgba(128, 128, 128, 0.5);
+    width: auto;
+    padding: 5px;
+    border-radius: 10px;
 }
