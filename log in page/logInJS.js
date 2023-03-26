@@ -9,6 +9,7 @@ function valid(event){
     let validPasswordRegex =  /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]*$/
 
     if(email.match(validEmailRegex) && password.match(validPasswordRegex)){
+        // TODO fix the link when the folders merge
         window.location.href = ('mainPage.html')
         document.getElementById('passwordInput').style.border = '1.5px solid green'
         document.getElementById('passwordError').style.display = 'none'
