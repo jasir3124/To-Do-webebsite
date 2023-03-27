@@ -18,7 +18,7 @@
     --bs-gray-dark: #343a40;
     --bs-primary: #0d6efd;
     --bs-secondary: #6c757d;
-    --bs-success: #198754;
+    --bs-success: #2da01e;
     --bs-info: #0dcaf0;
     --bs-warning: #ffc107;
     --bs-danger: #dc3545;
@@ -35,7 +35,6 @@ body{
     margin: 20px;
     border-radius: 10px;
     height: 100%;
-    border: var(--bs-success) solid 1px;
 }
 .navContainer{
     display: grid;
@@ -64,15 +63,20 @@ body{
     display: flex;
 }
 .addToDo{
+    display: none;
     border: 0;
-    border-radius: 5px;
-    padding: 5px;
+    padding: 4px 15px 5px 15px;
     background-color: var(--bs-success);
+    position: relative;
+    right: 2.5%;
+    color: white;
+    font-size: 12px;
+    bottom: 31px;
+    float: right;
 }
 .listContainer{
     min-height: 100%;
     margin: 30px;
-    background-color: rgba(168, 164, 164, 0.4);
     border-radius: 10px;
     padding: 10px;
 }
@@ -87,14 +91,25 @@ body{
     color: var(--bs-danger);
     visibility: hidden;
 }
-.toDoInputHolder{
-    position: absolute;
-    left: 50%;
-}
 .listTitle{
-    margin-top: 130px;
+    margin-top: 100px;
 }
-.ToDoHeader{
+.ToDoInput{
+    height: 35px;
+}
+.ToDoInput:focus{
+    outline: solid var(--bs-success) 0.5px;
+}
+.inputTitle{
+    background-color: rgba(168, 164, 164, 0.4);
+    width: fit-content;
+}
+.prioritet{
     position: relative;
-    top: 50px;
+    left: 10px;
+}
+.priority{
+    width: 12%;
+    display: grid;
+    text-align: center;
 }

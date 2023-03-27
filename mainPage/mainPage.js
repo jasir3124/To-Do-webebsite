@@ -23,6 +23,7 @@ toDoAdd.addEventListener('click', function(){
         li.setAttribute('class', 'listItem')
         lsitContainer.appendChild(li)
         li.innerText = ToDo
+        toDoAdd.style.display = 'none'
     }
 
 })
@@ -41,3 +42,13 @@ window.addEventListener('load', function(){
         li.setAttribute('class', 'listItem')
     })
 })
+
+function buttonAppear(){
+    toDoAdd.style.display = 'block'
+}
+
+window.onclick = function (event) {
+    if (event.target.contains(ToDoInput) && event.target !== ToDoInput) {
+        toDoAdd.style.display = 'none'
+    }
+}
