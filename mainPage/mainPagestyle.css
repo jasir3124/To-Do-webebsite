@@ -63,16 +63,12 @@ body{
     display: flex;
 }
 .addToDo{
-    display: none;
     border: 0;
-    padding: 4px 15px 5px 15px;
+    padding: 0px 15px 3px 15px;
     background-color: var(--bs-success);
-    position: relative;
-    right: 2.5%;
     color: white;
-    font-size: 12px;
-    bottom: 31px;
-    float: right;
+    position: relative;
+    top: 0px;
 }
 .listContainer{
     min-height: 100%;
@@ -90,9 +86,7 @@ body{
 .toDoError{
     color: var(--bs-danger);
     visibility: hidden;
-}
-.listTitle{
-    margin-top: 100px;
+    float: right;
 }
 .ToDoInput{
     height: 35px;
@@ -103,6 +97,9 @@ body{
 .inputTitle{
     background-color: rgba(168, 164, 164, 0.4);
     width: fit-content;
+    position: relative;
+    bottom: -7px;
+    padding: 5px;
 }
 .prioritet{
     position: relative;
@@ -112,4 +109,27 @@ body{
     width: 12%;
     display: grid;
     text-align: center;
+}
+.prioritet{
+    position: relative;
+    left: 0px;
+    bottom: -4px;
+}
+.prioBtn{
+    border: 0;
+    padding: 0px 15px 3px 15px;
+    background-color: var(--bs-warning);
+}
+.optPriority{
+    display: none;
+    box-shadow: 0px 0px 19px 0px rgba(0,0,0,0.75);
+    width: fit-content;
+    padding: 25px;
+    border-radius: 10px;
+}
+.listTitle{
+    margin-top: 30px;
+}
+.show{
+    display: block;
 }

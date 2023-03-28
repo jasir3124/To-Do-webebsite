@@ -29,16 +29,17 @@
             <div class="toDoInput m-3">
                 <div class="toDoInputHolder mt-3">
                     <h5 class="mt-3 inputTitle">To Do</h1>
-                    <input onclick="buttonAppear()" type="text" class="ToDoInput w-100"><button class="addToDo">SAVE</button><br>
+                    <input type="text" class="ToDoInput w-100"><br>
                     <span class="toDoError">Please add a valid item!</span> 
                     <div class="prioritet">
-                        <span>Priority</span>
-                        <select class="priority" name="" id="">
-                            <option value="hight">High</option>
-                            <option value="medium">Medium</option>
+                        <button class="prioBtn" onclick="setPriority()">Priority</button>
+                        <button class="addToDo">SAVE</button>
+                        <div class="optPriority">
+                            <option value="urgent"><i class="fa-solid fa-flag"></i>Urgent</option>
+                            <option value="high">Hight</option>
+                            <option value="normal">Normal</option>
                             <option value="low">Low</option>
-                            <option value="none">None</option>
-                        </select>
+                        </div>
                     </div>
                 </div>
                 <h1 class="h4 listTitle">Task List</h1>
