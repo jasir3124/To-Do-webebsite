@@ -24,7 +24,6 @@ toDoAdd.addEventListener('click', function(){
         lsitContainer.appendChild(li)
         li.innerText = ToDo
     }
-
 })
 
 window.addEventListener('load', function(){

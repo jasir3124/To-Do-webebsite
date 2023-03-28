@@ -86,7 +86,9 @@ body{
 .toDoError{
     color: var(--bs-danger);
     visibility: hidden;
-    float: right;
+    position: relative;
+    right: -170px;
+    top: 5px;
 }
 .ToDoInput{
     height: 35px;
@@ -113,7 +115,8 @@ body{
 .prioritet{
     position: relative;
     left: 0px;
-    bottom: -4px;
+    bottom: 20px;
+    top: -20px;
 }
 .prioBtn{
     border: 0;
@@ -126,6 +129,9 @@ body{
     width: fit-content;
     padding: 25px;
     border-radius: 10px;
+    position: absolute;
+    background-color: white;
+    z-index: 9;
 }
 .listTitle{
     margin-top: 30px;
