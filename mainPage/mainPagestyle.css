@@ -24,7 +24,10 @@
     --bs-danger: #dc3545;
     --bs-light: #f8f9fa;
     --bs-dark: #212529;
+    --bs-lightGrey: rgb(221, 220, 220);
+    --bs-gold: #FFD700;
 }
+
 body{
     height: 95vh;
 }
@@ -75,11 +78,17 @@ body{
     padding: 10px;
 }
 .listItem{
+    position: relative;
     list-style-type: none;
-    margin: 10px;
+    padding: 10px;
     font-size: 20px;
-    border-top: solid 1px;
+    border-bottom: solid 1px;
     width: 100%;
+}
+.priorityText{
+    position: absolute;
+    background-color: var(--bs-danger);
+    color: white;
 }
 .toDoError{
     color: var(--bs-danger);
@@ -119,7 +128,8 @@ body{
 .prioBtn{
     border: 0;
     padding: 0px 15px 3px 15px;
-    background-color: var(--bs-warning);
+    background-color: var(--bs-primary);
+    color: var(--bs-white);
 }
 .optPriority{
     display: none;
@@ -131,9 +141,21 @@ body{
     background-color: white;
     z-index: 9;
 }
+.show{
+    display: block;
+}
 .listTitle{
     margin-top: 30px;
 }
-.show{
-    display: block;
+.Priority:hover{
+    cursor: pointer;
+    transform: scale(1.5);
+}
+.iconRight{
+    position: absolute;
+    top: 10px;
+    right: 5px;
+}
+.inputContainer{
+    position: relative;
 }
