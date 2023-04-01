@@ -59,8 +59,6 @@ priorityLow.onclick = function(){
 // add to to-do
 toDoAdd.addEventListener('click', function(){
     let bolean;
-    console.log(priority)
-    console.log(priorityList)
     ToDo = ToDoInput.value
     ToDoInput.value = ''
 
@@ -74,17 +72,7 @@ toDoAdd.addEventListener('click', function(){
     }
 
     if(bolean){
-        if(priority == 'urgent'){
-            priorityList.push(priority)
-        } else if(priority == 'normal'){
-            priorityList.push(priority)
-        } else if(priority == 'low'){
-            priorityList.push(priority)
-        } else if(priority == 'high'){
-            priorityList.push(priority)
-        } else if(priority == undefined){
-            priorityList.push('none')
-        }
+        
 
         if(priority == 'urgent'){
             itemList.push(ToDo)
@@ -150,7 +138,29 @@ toDoAdd.addEventListener('click', function(){
             li.innerText = ToDo
             priorityIcon.style.display = 'none'
         }
+
+        if(priority == 'urgent'){
+            priorityList.push(priority)
+            priority = undefined
+        } else if(priority == 'normal'){
+            priorityList.push(priority)
+            priority = undefined
+        } else if(priority == 'low'){
+            priorityList.push(priority)
+            priority = undefined
+        } else if(priority == 'high'){
+            priorityList.push(priority)
+            priority = undefined
+        } else if(priority == undefined){
+            priorityList.push('none')
+            priority = undefined
+        }
     }
+
+    localStorage.setItem('priority', JSON.stringify(priorityList))
+
+    console.log(priority)
+    console.log(priorityList)
 })
 
 window.addEventListener('load', function(){
@@ -159,6 +169,14 @@ window.addEventListener('load', function(){
     if(storage){
         itemList.push(...storage)
     }
+
+    let priorityStorage = JSON.parse(localStorage.getItem('priority'))
+
+    if(priorityStorage){
+        priorityList.push(...priorityStorage)
+    }
+    console.log(priorityList)
+    console.log(itemList)
 
     itemList.forEach(function(item){
         let li = document.createElement('li')
