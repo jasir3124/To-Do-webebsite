@@ -4,7 +4,6 @@
 let ToDoInput = document.querySelector('.ToDoInput')
 let toDoAdd = document.querySelector('.addToDo')
 let lsitContainer = document.querySelector('.listContainer')
-let bolean;
 let itemList = []
 
 // priority vaiables
@@ -15,6 +14,7 @@ let priorityHigh = document.querySelector('.high')
 let prioritNormal = document.querySelector('.Normal')
 let priorityLow = document.querySelector('.low')
 let inputContainer = document.querySelector('.inputContainer')
+let priorityIcon = document.createElement('i')
 
 
 
@@ -28,46 +28,42 @@ function setPriority(){
 priorityUrgent.onclick = function(){
     priority = 'urgent'
     document.querySelector('.optPriority').classList.remove('show')
-    let priorityIcon = document.createElement('i')
     priorityIcon.classList.add('iconRight', 'pe-2', 'fa-solid', 'fa-flag')
     priorityIcon.setAttribute('style', 'color: red;')
     inputContainer.appendChild(priorityIcon)
-    priorityList.push(priority)
 }
 priorityHigh.onclick = function(){
-     priority = 'high'
-     document.querySelector('.optPriority').classList.remove('show')
-    let priorityIcon = document.createElement('i')
+    priority = 'high'
+    document.querySelector('.optPriority').classList.remove('show')
     priorityIcon.classList.add('iconRight', 'pe-2', 'fa-solid', 'fa-flag')
     priorityIcon.setAttribute('style', 'color: var(--bs-yellow);')
     inputContainer.appendChild(priorityIcon)
-    priorityList.push(priority)
-    }
+}
 prioritNormal.onclick = function(){
     priority = 'normal'
     document.querySelector('.optPriority').classList.remove('show')
-    let priorityIcon = document.createElement('i')
     priorityIcon.classList.add('iconRight', 'pe-2', 'fa-solid', 'fa-flag')
     priorityIcon.setAttribute('style', 'color: blue;')
     inputContainer.appendChild(priorityIcon)
-    priorityList.push(priority)
 }
 priorityLow.onclick = function(){
     priority = 'low'
     document.querySelector('.optPriority').classList.remove('show')
-    let priorityIcon = document.createElement('i')
     priorityIcon.classList.add('iconRight', 'pe-2', 'fa-solid', 'fa-flag')
-    priorityIcon.setAttribute('style', 'color: grey;')
+    priorityIcon.setAttribute('style', 'color: var(--bs-indigo);')
     inputContainer.appendChild(priorityIcon)
-    priorityList.push(priority)
 }
 
-console.log(priorityList)
+
 
 // add to to-do
 toDoAdd.addEventListener('click', function(){
+    let bolean;
+    console.log(priority)
+    console.log(priorityList)
     ToDo = ToDoInput.value
     ToDoInput.value = ''
+
 
     if(ToDo == ''){
         document.querySelector('.toDoError').style.visibility = 'visible'
@@ -78,15 +74,81 @@ toDoAdd.addEventListener('click', function(){
     }
 
     if(bolean){
-        itemList.push(ToDo)
-        localStorage.setItem('ToDo', JSON.stringify(itemList))
-        let li = document.createElement('li')
-        li.setAttribute('class', 'listItem')
-        lsitContainer.appendChild(li)
-        li.innerText = ToDo
         if(priority == 'urgent'){
-            let priorityText = document.createElement('p')
-            priorityText.setAttribute('class', 'priorityText')
+            priorityList.push(priority)
+        } else if(priority == 'normal'){
+            priorityList.push(priority)
+        } else if(priority == 'low'){
+            priorityList.push(priority)
+        } else if(priority == 'high'){
+            priorityList.push(priority)
+        } else if(priority == undefined){
+            priorityList.push('none')
+        }
+
+        if(priority == 'urgent'){
+            itemList.push(ToDo)
+            localStorage.setItem('ToDo', JSON.stringify(itemList))
+            let li = document.createElement('li')
+            li.setAttribute('class', 'listItem')
+            lsitContainer.appendChild(li)
+            li.innerText = ToDo
+            priorityIcon.style.display = 'none'
+            let priorityText = document.createElement('span')
+            priorityText.setAttribute('class', 'toDoPriorityUrgent')
+            priorityText.innerHTML = 'Urgent'
+            li.appendChild(priorityText)
+            localStorage.setItem('priority', JSON.stringify(priorityList))
+        } 
+        else if (priority == 'high'){
+            itemList.push(ToDo)
+            localStorage.setItem('ToDo', JSON.stringify(itemList))
+            let li = document.createElement('li')
+            li.setAttribute('class', 'listItem')
+            lsitContainer.appendChild(li)
+            li.innerText = ToDo
+            priorityIcon.style.display = 'none'
+            let priorityText = document.createElement('span')
+            priorityText.setAttribute('class', 'toDoPriorityHigh')
+            priorityText.innerHTML = 'High'
+            li.appendChild(priorityText)
+            localStorage.setItem('priority', JSON.stringify(priorityList))
+        } 
+        else if(priority == 'normal'){
+            itemList.push(ToDo)
+            localStorage.setItem('ToDo', JSON.stringify(itemList))
+            let li = document.createElement('li')
+            li.setAttribute('class', 'listItem')
+            lsitContainer.appendChild(li)
+            li.innerText = ToDo
+            priorityIcon.style.display = 'none'
+            let priorityText = document.createElement('span')
+            priorityText.setAttribute('class', 'toDoPriorityNormal')
+            priorityText.innerHTML = 'Normal'
+            li.appendChild(priorityText)
+            localStorage.setItem('priority', JSON.stringify(priorityList))
+        }
+        else if(priority == 'low'){
+            itemList.push(ToDo)
+            localStorage.setItem('ToDo', JSON.stringify(itemList))
+            let li = document.createElement('li')
+            li.setAttribute('class', 'listItem')
+            lsitContainer.appendChild(li)
+            li.innerText = ToDo
+            priorityIcon.style.display = 'none'
+            let priorityText = document.createElement('span')
+            priorityText.setAttribute('class', 'toDoPriorityLow')
+            priorityText.innerHTML = 'Low'
+            li.appendChild(priorityText)
+            localStorage.setItem('priority', JSON.stringify(priorityList))
+        } else {
+            itemList.push(ToDo)
+            localStorage.setItem('ToDo', JSON.stringify(itemList))
+            let li = document.createElement('li')
+            li.setAttribute('class', 'listItem')
+            lsitContainer.appendChild(li)
+            li.innerText = ToDo
+            priorityIcon.style.display = 'none'
         }
     }
 })
