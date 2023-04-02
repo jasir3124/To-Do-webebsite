@@ -1,0 +1,89 @@
+
+
+:root{
+    --purple : #BD10E0;
+    --bs-indigo: #6610f2;
+    --bs-blue: #0d6efd;
+    --bs-indigo: #6610f2;
+    --bs-purple: #6f42c1;
+    --bs-pink: #d63384;
+    --bs-red: #dc3545;
+    --bs-orange: #fd7e14;
+    --bs-yellow: #ffc107;
+    --bs-green: #198754;
+    --bs-teal: #20c997;
+    --bs-cyan: #0dcaf0;
+    --bs-white: #fff;
+    --bs-gray: #6c757d;
+    --bs-gray-dark: #343a40;
+    --bs-primary: #0d6efd;
+    --bs-secondary: #6c757d;
+    --bs-success: #2da01e;
+    --bs-info: #0dcaf0;
+    --bs-warning: #ffc107;
+    --bs-danger: #dc3545;
+    --bs-light: #f8f9fa;
+    --bs-dark: #212529;
+    --bs-lightGrey: rgb(221, 220, 220);
+    --bs-gold: #FFD700;
+}
+body{
+    height: 95svh;
+    margin: 20px;
+}
+.navLeft{
+    background-color: #e6eaec;
+}
+.cont{
+    display: flex;
+    height: 100%;
+}
+.stickyWall{
+    margin-left: 20px;
+    width: 100%;
+}
+.stickyWall h1{
+    font-size: 3rem;
+}
+.stickyWallContainer{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.stickyWall1{
+    width: 30%;
+    background-color: rgba(255, 255, 0, 0.5);
+    min-height: 300px;
+    padding: 20px;
+}
+.stickyWall2{
+    width: 30%;
+    background-color: 	rgba(173,216,230, 0.7);
+    height: 300px;
+    padding: 20px;
+}
+.stickyWall3{
+    width: 30%;
+    background-color: rgba(199, 77, 183, 0.5);
+    height: 300px;
+    padding: 20px;
+}
+.stickyWallInput1,
+.stickyWallInput2,
+.stickyWallInput3{
+    background-color: transparent;
+    border: 1px solid  rgba(0, 0, 0, 0.5);
+    width: 100%;
+    border-right: 0;
+}
+.stickyNoteAddBtn1,
+.stickyNoteAddBtn2,
+.stickyNoteAddBtn3{
+    background-color: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-left: 0;
+}
+.inputError1{
+    color: red;
+    visibility: hidden;
+}

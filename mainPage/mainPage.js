@@ -175,8 +175,10 @@ window.addEventListener('load', function(){
     if(priorityStorage){
         priorityList.push(...priorityStorage)
     }
+
     console.log(priorityList)
     console.log(itemList)
+
 
     itemList.forEach(function(item){
         let li = document.createElement('li')
