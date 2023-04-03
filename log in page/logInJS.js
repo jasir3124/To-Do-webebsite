@@ -10,7 +10,9 @@ function valid(event){
 
     if(email.match(validEmailRegex) && password.match(validPasswordRegex)){
         // TODO fix the link when the folders merge
-        window.location.href = ('')
+        window.location.href = ('text.html')
+        let username = document.getElementById('usernameInput').value
+        localStorage.setItem('username', JSON.stringify(username))
         document.getElementById('passwordInput').style.border = '1.5px solid green'
         document.getElementById('passwordError').style.display = 'none'
         document.getElementById('emailInput').style.border = '1.5px solid green'
@@ -54,6 +56,3 @@ function valid(event){
         return false
      }
 } 
-
-
-let username = document.getElementById('usernameInput').value

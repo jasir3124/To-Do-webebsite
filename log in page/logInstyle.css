@@ -39,6 +39,10 @@
     border: 1px solid;
     outline: none;
 }
+.usernameInput{
+    border: 1px solid;
+    outline: none;
+}
 .emailError{
     display: none;
     color: red;
