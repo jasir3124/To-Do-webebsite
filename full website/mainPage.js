@@ -188,3 +188,15 @@ window.addEventListener('load', function(){
     })
 })
 
+
+// shows username
+let usernameText = document.querySelector('.username')
+let username = JSON.parse(localStorage.getItem('username'))
+function showUsername(){
+    if(username){
+        usernameText.innerHTML = username
+    } else{
+        usernameText.innerHTML = 'User'
+    }
+}
+showUsername()
