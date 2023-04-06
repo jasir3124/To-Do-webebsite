@@ -84,6 +84,7 @@ body{
     font-size: 20px;
     border-bottom: solid 1px;
     width: 100%;
+    word-break: break-all;
 }
 .priorityText{
     position: absolute;
@@ -109,10 +110,6 @@ body{
     position: relative;
     bottom: -7px;
     padding: 5px;
-}
-.prioritet{
-    position: relative;
-    left: 10px;
 }
 .priority{
     width: 12%;
@@ -163,8 +160,6 @@ body{
     color: white;
     background-color: var(--bs-danger);
     border-radius: 5px;
-    position: absolute;
-    right: 5px;
     font-size: 15px;
     padding: 3px 13px 3px 13px;
 }
@@ -172,8 +167,6 @@ body{
     color: white;
     background-color: var(--bs-yellow);
     border-radius: 5px;
-    position: absolute;
-    right: 5px;
     font-size: 15px;
     padding: 3px 20px 3px 21px;
 }
@@ -181,8 +174,6 @@ body{
     color: white;
     background-color: var(--bs-primary);
     border-radius: 5px;
-    position: absolute;
-    right: 5px;
     font-size: 15px;
     padding: 3px 12px 3px 12px;
 }
@@ -190,17 +181,11 @@ body{
     color: white;
     background-color: var(--bs-indigo);
     border-radius: 5px;
-    position: absolute;
-    right: 5px;
     font-size: 15px;
     padding: 3px 23px 3px 23px;
 }
-.toDoPriorityNone{
-    color: white;
-    background-color: grey;
-    border-radius: 5px;
-    position: absolute;
-    right: 5px;
-    font-size: 15px;
-    padding: 3px 18px 3px 18px;
+
+.priorityCont{
+    position: relative;
+    top: 5px;
 }

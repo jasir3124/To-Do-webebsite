@@ -82,10 +82,13 @@ toDoAdd.addEventListener('click', function(){
             lsitContainer.appendChild(li)
             li.innerText = ToDo
             priorityIcon.style.display = 'none'
+            let priorityTextCont = document.createElement('div')
+            li.appendChild(priorityTextCont)
+            priorityTextCont.setAttribute('class', 'priorityCont')
             let priorityText = document.createElement('span')
             priorityText.setAttribute('class', 'toDoPriorityUrgent')
             priorityText.innerHTML = 'Urgent'
-            li.appendChild(priorityText)
+            priorityTextCont.appendChild(priorityText)
             localStorage.setItem('priority', JSON.stringify(priorityList))
         } 
         else if (priority == 'high'){
@@ -96,10 +99,13 @@ toDoAdd.addEventListener('click', function(){
             lsitContainer.appendChild(li)
             li.innerText = ToDo
             priorityIcon.style.display = 'none'
+            let priorityTextCont = document.createElement('div')
+            li.appendChild(priorityTextCont)
+            priorityTextCont.setAttribute('class', 'priorityCont')
             let priorityText = document.createElement('span')
             priorityText.setAttribute('class', 'toDoPriorityHigh')
             priorityText.innerHTML = 'High'
-            li.appendChild(priorityText)
+            priorityTextCont.appendChild(priorityText)
             localStorage.setItem('priority', JSON.stringify(priorityList))
         } 
         else if(priority == 'normal'){
@@ -110,10 +116,13 @@ toDoAdd.addEventListener('click', function(){
             lsitContainer.appendChild(li)
             li.innerText = ToDo
             priorityIcon.style.display = 'none'
+            let priorityTextCont = document.createElement('div')
+            li.appendChild(priorityTextCont)
+            priorityTextCont.setAttribute('class', 'priorityCont')
             let priorityText = document.createElement('span')
             priorityText.setAttribute('class', 'toDoPriorityNormal')
             priorityText.innerHTML = 'Normal'
-            li.appendChild(priorityText)
+            priorityTextCont.appendChild(priorityText)
             localStorage.setItem('priority', JSON.stringify(priorityList))
         }
         else if(priority == 'low'){
@@ -124,10 +133,13 @@ toDoAdd.addEventListener('click', function(){
             lsitContainer.appendChild(li)
             li.innerText = ToDo
             priorityIcon.style.display = 'none'
+            let priorityTextCont = document.createElement('div')
+            li.appendChild(priorityTextCont)
+            priorityTextCont.setAttribute('class', 'priorityCont')
             let priorityText = document.createElement('span')
             priorityText.setAttribute('class', 'toDoPriorityLow')
             priorityText.innerHTML = 'Low'
-            li.appendChild(priorityText)
+            priorityTextCont.appendChild(priorityText)
             localStorage.setItem('priority', JSON.stringify(priorityList))
         } else {
             itemList.push(ToDo)
@@ -200,3 +212,4 @@ function showUsername(){
     }
 }
 showUsername()
+
