@@ -89,3 +89,15 @@ body{
     color: red;
     visibility: hidden;
 }
+.holeCont{
+    display: flex;
+}
+.hole{
+    background-color: white;
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+}
+.hole:nth-child(2){
+    margin-left: auto;
+}
