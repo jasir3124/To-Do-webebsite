@@ -91,6 +91,7 @@ body{
 }
 .holeCont{
     display: flex;
+    margin-bottom: 15px;
 }
 .hole{
     background-color: white;

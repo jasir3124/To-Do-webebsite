@@ -188,4 +188,5 @@ body{
 .priorityCont{
     position: relative;
     top: 5px;
+    right: 5px;
 }
