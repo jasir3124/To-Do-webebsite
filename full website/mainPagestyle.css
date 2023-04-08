@@ -30,6 +30,8 @@
 
 body{
     height: 95svh;
+    background-color: #252422;
+    color: white;
 }
 .navLeft{
     width: 300px;
@@ -82,9 +84,16 @@ body{
     list-style-type: none;
     padding: 10px;
     font-size: 20px;
-    border-bottom: solid 1px;
     width: 100%;
     word-break: break-all;
+    margin: 5px;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    background: #8E2DE2;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #4A00E0, #8E2DE2);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #4A00E0, #8E2DE2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    padding: 10px;
+    color: white;
 }
 .priorityText{
     position: absolute;
