@@ -26,6 +26,8 @@
     --bs-dark: #212529;
     --bs-lightGrey: rgb(221, 220, 220);
     --bs-gold: #FFD700;
+    --bs-jk : #1565C0, #b92b27;
+    --bs-amin : #8E2DE2, #4A00E0 ;
 }
 
 body{
@@ -90,8 +92,8 @@ body{
     border-radius: 10px;
     border: 1px solid transparent;
     background: #8E2DE2;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #4A00E0, #8E2DE2);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #4A00E0, #8E2DE2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: -webkit-linear-gradient(to right, var(--bs-amin));  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, var(--bs-amin)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     padding: 10px;
     color: white;
 }
@@ -117,7 +119,7 @@ body{
     background-color: rgba(168, 164, 164, 0.4);
     width: fit-content;
     position: relative;
-    bottom: -7px;
+    bottom: -10px;
     padding: 5px;
 }
 .priority{
@@ -146,6 +148,7 @@ body{
     position: absolute;
     background-color: white;
     z-index: 9;
+    background-color: #131211;
 }
 .show{
     display: block;
@@ -198,4 +201,14 @@ body{
     position: relative;
     top: 5px;
     right: 5px;
+}
+.active-local{
+    background-color: black !important;
+}
+.border-gradient{
+    background: #8E2DE2;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, var(--bs-amin));  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, var(--bs-amin)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    padding: 2px;
+    border-radius: 0.25rem;
 }

@@ -23,6 +23,10 @@ function setPriority(){
     document.querySelector('.optPriority').classList.toggle('show')
 }
 
+// when mouse leaves the priority box it disspears
+document.querySelector('.optPriority').addEventListener('mouseleave', function(){
+    document.querySelector('.optPriority').classList.remove('show')
+})
 
 
 priorityUrgent.onclick = function(){
