@@ -18,6 +18,9 @@ body{
     border: 2px solid var(--bs-lightBlue);
     padding: 50px;
     box-shadow: 0px 0px 78px 11px rgba(0, 162, 255,0.75);
+    border-radius: 1rem;
+    transition: transform 0.2s ease-in-out;
+
 }
 .emailInput{
     border: 1px solid;
@@ -51,4 +54,7 @@ body{
 .signUpBtn:hover{
     background-color: var(--bs-lightBlue);
     color: white;
+}
+.logInForm:hover{
+    transform: scale(1.1);
 }
