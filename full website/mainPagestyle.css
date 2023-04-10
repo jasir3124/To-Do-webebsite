@@ -123,10 +123,12 @@ body{
     border-radius: 15px;
     border: 0;
     outline: none;
+    color: white;
+    width: 100%;
 }
 .ToDoInput:focus{
-    background-color: black;
     color: white;
+    z-index: 1;
 }
 .inputGradient{
     background: #8E2DE2;
@@ -134,9 +136,6 @@ body{
     background: linear-gradient(to right, var(--bs-aminGradient));
     padding: 3px;
     border-radius: 15px;
-}
-.ToDoInput:focus{
-    outline: solid var(--bs-success) 0.5px;
 }
 .priority{
     width: 12%;
@@ -215,7 +214,6 @@ body{
     font-size: 15px;
     padding: 3px 23px 3px 23px;
 }
-
 .priorityCont{
     position: relative;
     top: 5px;
