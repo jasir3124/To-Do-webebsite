@@ -1,6 +1,33 @@
 
+
 :root{
-    --bs-lightBlue : rgb(0, 162, 255);
+    --purple : #BD10E0;
+    --bs-indigo: #6610f2;
+    --bs-blue: #0d6efd;
+    --bs-indigo: #6610f2;
+    --bs-purple: #6f42c1;
+    --bs-pink: #d63384;
+    --bs-red: #dc3545;
+    --bs-orange: #fd7e14;
+    --bs-yellow: #ffc107;
+    --bs-green: #198754;
+    --bs-teal: #20c997;
+    --bs-cyan: #0dcaf0;
+    --bs-white: #fff;
+    --bs-gray: #6c757d;
+    --bs-gray-dark: #343a40;
+    --bs-primary: #0d6efd;
+    --bs-secondary: #6c757d;
+    --bs-success: #2da01e;
+    --bs-info: #0dcaf0;
+    --bs-warning: #ffc107;
+    --bs-danger: #dc3545;
+    --bs-light: #f8f9fa;
+    --bs-dark: #212529;
+    --bs-lightGrey: rgb(221, 220, 220);
+    --bs-gold: #FFD700;
+    --bs-aminGradient : #8E2DE2, #4A00E0 ;
+    --bs-darkGrey : #252422;
 }
 body{
     height: 95svh;
@@ -17,7 +44,7 @@ body{
     width: 405px;
     border: 2px solid var(--bs-lightBlue);
     padding: 50px;
-    box-shadow: 0px 0px 78px 11px rgba(51, 141, 194, 0.75);
+    box-shadow: 0px 0px 60px 31px rgba(51, 141, 194, 0.75);
     border-radius: 1rem;
     transition: transform 0.2s ease-in-out;
 }
@@ -53,6 +80,7 @@ body{
 .signUpBtn:hover{
     background-color: var(--bs-lightBlue);
     color: white;
+    background-color: var(--bs-info);
 }
 .logInForm:hover{
     transform: scale(1.1);

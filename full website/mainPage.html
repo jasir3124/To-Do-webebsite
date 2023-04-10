@@ -16,11 +16,10 @@
     <div class="cont">
         <div class="navLeft">
             <div class="navContainer h-100">
-                <!-- TODO fix the links when the files merge -->
   <div  class="text-white d-flex flex-column flex-shrink-0 p-3" style="width: 280px; background-color: #131211;">
     <a href="#" class="link-light d-flex align-items-center mb-3 mb-md-0 me-md-auto text-decoration-none">
       <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
-      <span class="fs-4">Menu</span>
+      <span class="fs-4 menuTitle">TaskMate</span>
     </a>
     <hr>
     <ul class="nav nav-pills flex-column mb-auto">
@@ -38,12 +37,6 @@
           Sticky Wall
         </a>
       </li>
-      <li>
-        <a href="#" class="nav-link link-light">
-          <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"/></svg>
-          Contact
-        </a>
-      </li>
     </ul>
     <hr>
     <h4 class="username"></h4>
@@ -55,7 +48,9 @@
             <div class="toDoInput m-3">
                 <div class="toDoInputHolder mt-3">
                     <h5 class="mt-3 inputTitle">To Do</h1>
-                      <div class="inputContainer"><input type="text" class="ToDoInput w-100"><br></div>
+                      <div class="input-group">
+                        <input type="text" class="form-control ToDoInput" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                      </div>
                     <span class="toDoError">Please add a valid item!</span> 
                     <div class="prioritet">
                         <button class="prioBtn" onclick="setPriority()">Priority</button>
@@ -77,7 +72,7 @@
 
 
 
-    
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 
     <script src="mainPage.js"></script>
 </body>

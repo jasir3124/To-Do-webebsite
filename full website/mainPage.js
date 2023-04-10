@@ -94,6 +94,7 @@ toDoAdd.addEventListener('click', function(){
             priorityText.innerHTML = 'Urgent'
             priorityTextCont.appendChild(priorityText)
             localStorage.setItem('priority', JSON.stringify(priorityList))
+            li.scrollIntoView({behavior: 'smooth', block:"center"})
         } 
         else if (priority == 'high'){
             itemList.push(ToDo)
@@ -111,6 +112,7 @@ toDoAdd.addEventListener('click', function(){
             priorityText.innerHTML = 'High'
             priorityTextCont.appendChild(priorityText)
             localStorage.setItem('priority', JSON.stringify(priorityList))
+            li.scrollIntoView({behavior: 'smooth', block:"center"})
         } 
         else if(priority == 'normal'){
             itemList.push(ToDo)
@@ -128,6 +130,7 @@ toDoAdd.addEventListener('click', function(){
             priorityText.innerHTML = 'Normal'
             priorityTextCont.appendChild(priorityText)
             localStorage.setItem('priority', JSON.stringify(priorityList))
+            li.scrollIntoView({behavior: 'smooth', block:"center"})
         }
         else if(priority == 'low'){
             itemList.push(ToDo)
@@ -145,6 +148,7 @@ toDoAdd.addEventListener('click', function(){
             priorityText.innerHTML = 'Low'
             priorityTextCont.appendChild(priorityText)
             localStorage.setItem('priority', JSON.stringify(priorityList))
+            li.scrollIntoView({behavior: 'smooth', block:"center"})
         } else {
             itemList.push(ToDo)
             localStorage.setItem('ToDo', JSON.stringify(itemList))
@@ -153,6 +157,7 @@ toDoAdd.addEventListener('click', function(){
             lsitContainer.appendChild(li)
             li.innerText = ToDo
             priorityIcon.style.display = 'none'
+            li.scrollIntoView({behavior: 'smooth', block:"center"})
         }
 
         if(priority == 'urgent'){
@@ -217,3 +222,22 @@ function showUsername(){
 }
 showUsername()
 
+// scroll to top btn
+let mybutton = document.getElementById("myBtn");
+
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}

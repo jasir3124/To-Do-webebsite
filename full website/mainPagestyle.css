@@ -26,14 +26,21 @@
     --bs-dark: #212529;
     --bs-lightGrey: rgb(221, 220, 220);
     --bs-gold: #FFD700;
-    --bs-jk : #1565C0, #b92b27;
-    --bs-amin : #8E2DE2, #4A00E0 ;
+    --bs-aminGradient : #8E2DE2, #4A00E0 ;
+    --bs-darkGrey : #252422;
 }
 
 body{
     height: 95svh;
-    background-color: #252422;
+    background-color: var(--bs-darkGrey);
     color: white;
+}
+.menuTitle{
+    font-size: 2rem !important;
+    background: linear-gradient(90deg, #8E2DE2 , #4A00E0 );
+    width: fit-content;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 .navLeft{
     width: 300px;
@@ -92,9 +99,8 @@ body{
     border-radius: 10px;
     border: 1px solid transparent;
     background: #8E2DE2;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, var(--bs-amin));  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, var(--bs-amin)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    padding: 10px;
+    background: -webkit-linear-gradient(to right, var(--bs-aminGradient));  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, var(--bs-aminGradient)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     color: white;
 }
 .priorityText{
@@ -207,8 +213,29 @@ body{
 }
 .border-gradient{
     background: #8E2DE2;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, var(--bs-amin));  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, var(--bs-amin)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: -webkit-linear-gradient(to right, var(--bs-aminGradient));  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, var(--bs-aminGradient)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     padding: 2px;
     border-radius: 0.25rem;
+}
+#myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    left: 50px;
+    z-index: 99;
+    border: none;
+    outline: none; 
+    background-color: black; 
+    color: white;
+    cursor: pointer; 
+    padding: 15px; 
+    border-radius: 50%;
+    font-size: 20px;
+    transition: background-color 0.5s ease;
+  }
+  
+
+  #myBtn:hover {
+    background-color: #8E2DE2;
 }

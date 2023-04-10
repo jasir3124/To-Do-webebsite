@@ -26,10 +26,24 @@
     --bs-dark: #212529;
     --bs-lightGrey: rgb(221, 220, 220);
     --bs-gold: #FFD700;
+    --bs-aminGradient : #8E2DE2, #4A00E0 ;
+    --bs-darkGrey : #252422;
 }
 body{
     height: 95svh;
     margin: 20px;
+    color: white;
+    background-color: var(--bs-darkGrey);
+}
+::placeholder{
+    color: black;
+}
+.menuTitle{
+    font-size: 2rem !important;
+    background: linear-gradient(90deg, #8E2DE2 , #4A00E0 );
+    width: fit-content;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 .navLeft{
     background-color: #e6eaec;
@@ -43,7 +57,12 @@ body{
     width: 100%;
 }
 .stickyWall h1{
+    margin-left: 20px;
     font-size: 3rem;
+    background: linear-gradient(90deg, #8E2DE2 , #4A00E0 );
+    width: fit-content;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 .stickyWallContainer{
     width: 100%;
@@ -75,6 +94,7 @@ body{
     border: 1px solid  rgba(0, 0, 0, 0.5);
     width: 100%;
     border-right: 0;
+    outline: none;
 }
 .stickyNoteAddBtn1,
 .stickyNoteAddBtn2,
@@ -94,11 +114,34 @@ body{
     margin-bottom: 15px;
 }
 .hole{
-    background-color: white;
+    background-color: var(--bs-darkGrey);
     border-radius: 50%;
     height: 25px;
     width: 25px;
 }
 .hole:nth-child(2){
     margin-left: auto;
+}
+.active-gradient{
+    background: #8E2DE2;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, var(--bs-aminGradient));  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, var(--bs-aminGradient)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    padding: 2px;
+    border-radius: 0.25rem;
+}
+.active-gradient a{
+    background-color: black !important;
+}
+.stickyWallName{
+    color: black;
+}
+.listContainer1,
+.listContainer2,
+.listContainer3{
+    color: #000000;
+}
+.listContainer1 li,
+.listContainer2 li,
+.listContainer3 li{
+    word-break: break-all;
 }
