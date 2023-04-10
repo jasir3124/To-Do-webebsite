@@ -77,7 +77,9 @@ body{
 .addToDo{
     border: 0;
     padding: 0px 15px 3px 15px;
-    background-color: var(--bs-success);
+    background: #11998e;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #38ef7d, #11998e);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #38ef7d, #11998e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */    
     color: white;
     position: relative;
     top: 0px;
@@ -117,16 +119,24 @@ body{
 }
 .ToDoInput{
     height: 35px;
+    background-color: black;
+    border-radius: 15px;
+    border: 0;
+    outline: none;
+}
+.ToDoInput:focus{
+    background-color: black;
+    color: white;
+}
+.inputGradient{
+    background: #8E2DE2;
+    background: -webkit-linear-gradient(to right, var(--bs-aminGradient));
+    background: linear-gradient(to right, var(--bs-aminGradient));
+    padding: 3px;
+    border-radius: 15px;
 }
 .ToDoInput:focus{
     outline: solid var(--bs-success) 0.5px;
-}
-.inputTitle{
-    background-color: rgba(168, 164, 164, 0.4);
-    width: fit-content;
-    position: relative;
-    bottom: -10px;
-    padding: 5px;
 }
 .priority{
     width: 12%;
@@ -135,14 +145,17 @@ body{
 }
 .prioritet{
     position: relative;
-    left: 0px;
+    left: 15px;
     bottom: 20px;
     top: -20px;
 }
 .prioBtn{
     border: 0;
     padding: 0px 15px 3px 15px;
-    background-color: var(--bs-primary);
+    background: #667db6;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
     color: var(--bs-white);
 }
 .optPriority{

@@ -3,7 +3,7 @@
 function valid(event){
     event.preventDefault()
 
-    let email = document.getElementById('emailInput').value
+    let email = document.querySelector('#emailInput').value
     let password = document.getElementById('passwordInput').value
     let validEmailRegex =   /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
     let validPasswordRegex =  /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]*$/
@@ -55,3 +55,16 @@ function valid(event){
         return false
      }
 } 
+
+
+
+
+const togglePassword = document.querySelector('#togglePassword');
+
+togglePassword.addEventListener('click', function (e) {
+    let password = document.getElementById('passwordInput');
+    const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+    password.setAttribute('type', type);
+    this.classList.toggle('fa-eye')
+    this.classList.toggle('fa-eye-slash');
+});

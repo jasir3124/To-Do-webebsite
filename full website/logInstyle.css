@@ -48,9 +48,8 @@ body{
     border-radius: 1rem;
     transition: transform 0.2s ease-in-out;
 }
-.emailInput{
-    border: 1px solid;
-    outline: none;
+.floatingInput{
+    color: black !important;
 }
 .passwordInput{
     border: 1px solid;
@@ -84,4 +83,20 @@ body{
 }
 .logInForm:hover{
     transform: scale(1.1);
+}
+.inputCont{
+    position: relative;
+}
+.eye{
+    position: absolute;
+    color: black;
+    right: 5px;
+    top: 5px;
+}
+.emailInput,
+.passwordInput,
+.usernameInput{
+    border: 0;
+    outline: none;
+    border-radius: 3px;
 }
