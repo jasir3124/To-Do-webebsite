@@ -121,14 +121,18 @@ body{
     height: 35px;
     background-color: black;
     border-radius: 15px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
     border: 0;
     outline: none;
     color: white;
-    width: 100%;
+    width: 95%;
+    position: relative;
+    z-index: 2;
 }
 .ToDoInput:focus{
     color: white;
-    z-index: 1;
+    /* z-index: 1; */
 }
 .inputGradient{
     background: #8E2DE2;
@@ -178,12 +182,7 @@ body{
     cursor: pointer;
     transform: scale(1.5);
 }
-.iconRight{
-    position: absolute;
-    top: 10px;
-    right: 5px;
-}
-.inputContainer{
+.inputContainerLocal{
     position: relative;
 }
 .toDoPriorityUrgent{
@@ -249,4 +248,19 @@ body{
 
   #myBtn:hover {
     background-color: #8E2DE2;
+}
+.iconCont{
+    background-color: black;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 10px;
+    float: right;
+    position: absolute;
+    top: 3px;
+    right: 4px;
+    width: 98%;
+    height: 85%;
+    z-index: 1;
+    display: flex;
+    justify-content: end;
 }

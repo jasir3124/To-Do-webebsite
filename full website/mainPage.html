@@ -47,8 +47,11 @@
         <div class="ToDo w-100">
             <div class="toDoInputDiv m-3 mt-5">
                 <div class="toDoInputHolder mt-3">
-                      <div class="input-group inputGradient inputContainer">
-                        <input type="text" class="p-2 pe-2 ToDoInput" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                      <div class=" inputGradient inputContainerLocal">
+                        <input type="text" class="p-2 ToDoInput">
+                        <div class="iconCont">
+                          <i class="priorityIcon pe-2"></i>
+                        </div>
                       </div>
                     <span class="toDoError">Please add a valid item!</span> 
                     <div class="prioritet">
@@ -59,6 +62,7 @@
                             <span class="Priority high"><i class="pe-2 fa-solid fa-flag" style="color: #ffc107;"></i>High<br><br></span>
                             <span class="Priority Normal"><i class="pe-2 fa-solid fa-flag" style="color: blue;"></i>Normal<br><br></span>
                             <span class="Priority low"><i class="pe-2 fa-solid fa-flag" style="color: var(--bs-indigo);"></i>Low<br><br></span>
+                            <span class="Priority none"><i class="pe-2 fa-solid fa-flag" style="color: grey;"></i>None<br><br></span>
                         </div>
                     </div>
                 </div>

@@ -13,8 +13,9 @@ let priorityUrgent = document.querySelector('.urgent')
 let priorityHigh = document.querySelector('.high')
 let prioritNormal = document.querySelector('.Normal')
 let priorityLow = document.querySelector('.low')
-let inputContainer = document.querySelector('.inputContainer')
-let priorityIcon = document.createElement('i')
+let priorityNone = document.querySelector('.none')
+let inputContainer = document.querySelector('.iconCont')
+let priorityIcon = document.querySelector('.priorityIcon')
 
 
 
@@ -32,32 +33,32 @@ document.querySelector('.optPriority').addEventListener('mouseleave', function()
 priorityUrgent.onclick = function(){
     priority = 'urgent'
     document.querySelector('.optPriority').classList.remove('show')
-    priorityIcon.classList.add('iconRight', 'pe-2', 'fa-solid', 'fa-flag')
+    priorityIcon.classList.add( 'pe-2', 'fa-solid', 'fa-flag')
     priorityIcon.setAttribute('style', 'color: red;')
-    inputContainer.appendChild(priorityIcon)
 }
 priorityHigh.onclick = function(){
     priority = 'high'
     document.querySelector('.optPriority').classList.remove('show')
-    priorityIcon.classList.add('iconRight', 'pe-2', 'fa-solid', 'fa-flag')
+    priorityIcon.classList.add('pe-2', 'fa-solid', 'fa-flag')
     priorityIcon.setAttribute('style', 'color: var(--bs-yellow);')
-    inputContainer.appendChild(priorityIcon)
 }
 prioritNormal.onclick = function(){
     priority = 'normal'
     document.querySelector('.optPriority').classList.remove('show')
-    priorityIcon.classList.add('iconRight', 'pe-2', 'fa-solid', 'fa-flag')
+    priorityIcon.classList.add('pe-2', 'fa-solid', 'fa-flag')
     priorityIcon.setAttribute('style', 'color: blue;')
-    inputContainer.appendChild(priorityIcon)
 }
 priorityLow.onclick = function(){
     priority = 'low'
     document.querySelector('.optPriority').classList.remove('show')
-    priorityIcon.classList.add('iconRight', 'pe-2', 'fa-solid', 'fa-flag')
+    priorityIcon.classList.add('pe-2', 'fa-solid', 'fa-flag')
     priorityIcon.setAttribute('style', 'color: var(--bs-indigo);')
-    inputContainer.appendChild(priorityIcon)
 }
-
+priorityNone.onclick = function(){
+    priority = 'none'
+    document.querySelector('.optPriority').classList.remove('show')
+    priorityIcon.classList.remove('pe-2', 'fa-solid', 'fa-flag')
+}
 
 
 // add to to-do
@@ -77,6 +78,19 @@ toDoAdd.addEventListener('click', function(){
 
     if(bolean){
         
+        if(priority == 'urgent'){
+            priorityList.push(priority)
+        } else if(priority == 'normal'){
+            priorityList.push(priority)
+        } else if(priority == 'low'){
+            priorityList.push(priority)
+        } else if(priority == 'high'){
+            priorityList.push(priority)
+        } else if(priority == 'none'){
+            priorityList.push(priority)
+        }  else {
+            priorityList.push('none')
+        }
 
         if(priority == 'urgent'){
             itemList.push(ToDo)
@@ -157,24 +171,8 @@ toDoAdd.addEventListener('click', function(){
             lsitContainer.appendChild(li)
             li.innerText = ToDo
             priorityIcon.style.display = 'none'
+            localStorage.setItem('priority', JSON.stringify(priorityList))
             li.scrollIntoView({behavior: 'smooth', block:"center"})
-        }
-
-        if(priority == 'urgent'){
-            priorityList.push(priority)
-            priority = undefined
-        } else if(priority == 'normal'){
-            priorityList.push(priority)
-            priority = undefined
-        } else if(priority == 'low'){
-            priorityList.push(priority)
-            priority = undefined
-        } else if(priority == 'high'){
-            priorityList.push(priority)
-            priority = undefined
-        } else if(priority == undefined){
-            priorityList.push('none')
-            priority = undefined
         }
     }
 
@@ -201,11 +199,15 @@ window.addEventListener('load', function(){
     console.log(itemList)
 
 
-    itemList.forEach(function(item){
-        let li = document.createElement('li')
-        lsitContainer.appendChild(li)
-        li.innerText = item
-        li.setAttribute('class', 'listItem')
+    // itemList.forEach(function(item){
+    //     let li = document.createElement('li')
+    //     lsitContainer.appendChild(li)
+    //     li.innerText = item
+    //     li.setAttribute('class', 'listItem')
+    // })
+
+        itemList.forEach(function(item){
+            
     })
 })
 
@@ -235,9 +237,8 @@ function scrollFunction() {
     mybutton.style.display = "none";
   }
 }
-
-
 function topFunction() {
   document.body.scrollTop = 0; // For Safari
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
+
