@@ -63,43 +63,23 @@ priorityNone.onclick = function(){
 
 // add to to-do
 toDoAdd.addEventListener('click', function(){
-    let bolean;
     ToDo = ToDoInput.value
     ToDoInput.value = ''
 
 
     if(ToDo == ''){
         document.querySelector('.toDoError').style.visibility = 'visible'
-        bolean = false
-    } else {
-        document.querySelector('.toDoError').style.visibility = 'hidden'
-        bolean = true
-    }
+        return
+    } 
 
-    if(bolean){
+    
         
-        if(priority == 'urgent'){
-            priorityList.push(priority)
-        } else if(priority == 'normal'){
-            priorityList.push(priority)
-        } else if(priority == 'low'){
-            priorityList.push(priority)
-        } else if(priority == 'high'){
-            priorityList.push(priority)
-        } else if(priority == 'none'){
-            priorityList.push(priority)
-        }  else {
-            priorityList.push('none')
-        }
+
 
         if(priority == 'urgent'){
             itemList.push(ToDo)
             localStorage.setItem('ToDo', JSON.stringify(itemList))
-            let li = document.createElement('li')
-            li.setAttribute('class', 'listItem')
-            lsitContainer.appendChild(li)
-            li.innerText = ToDo
-            priorityIcon.style.display = 'none'
+            let li = createListLocal(ToDo)
             let priorityTextCont = document.createElement('div')
             li.appendChild(priorityTextCont)
             priorityTextCont.setAttribute('class', 'priorityCont')
@@ -107,9 +87,7 @@ toDoAdd.addEventListener('click', function(){
             priorityText.setAttribute('class', 'toDoPriorityUrgent')
             priorityText.innerHTML = 'Urgent'
             priorityTextCont.appendChild(priorityText)
-            let delBtn = document.createElement('button')
-            delBtn.setAttribute('class', 'deleteBtn')
-            delBtn.innerHTML = 'Delete'
+            let delBtn = createDeleteButton()
             priorityTextCont.appendChild(delBtn)
             localStorage.setItem('priority', JSON.stringify(priorityList))
             li.scrollIntoView({behavior: 'smooth', block:"center"})
@@ -117,11 +95,7 @@ toDoAdd.addEventListener('click', function(){
         else if (priority == 'high'){
             itemList.push(ToDo)
             localStorage.setItem('ToDo', JSON.stringify(itemList))
-            let li = document.createElement('li')
-            li.setAttribute('class', 'listItem')
-            lsitContainer.appendChild(li)
-            li.innerText = ToDo
-            priorityIcon.style.display = 'none'
+            let li = createListLocal(ToDo)
             let priorityTextCont = document.createElement('div')
             li.appendChild(priorityTextCont)
             priorityTextCont.setAttribute('class', 'priorityCont')
@@ -129,9 +103,7 @@ toDoAdd.addEventListener('click', function(){
             priorityText.setAttribute('class', 'toDoPriorityHigh')
             priorityText.innerHTML = 'High'
             priorityTextCont.appendChild(priorityText)
-            let delBtn = document.createElement('button')
-            delBtn.setAttribute('class', 'deleteBtn')
-            delBtn.innerHTML = 'Delete'
+            let delBtn = createDeleteButton()
             priorityTextCont.appendChild(delBtn)
             localStorage.setItem('priority', JSON.stringify(priorityList))
             li.scrollIntoView({behavior: 'smooth', block:"center"})
@@ -139,11 +111,7 @@ toDoAdd.addEventListener('click', function(){
         else if(priority == 'normal'){
             itemList.push(ToDo)
             localStorage.setItem('ToDo', JSON.stringify(itemList))
-            let li = document.createElement('li')
-            li.setAttribute('class', 'listItem')
-            lsitContainer.appendChild(li)
-            li.innerText = ToDo
-            priorityIcon.style.display = 'none'
+            let li = createListLocal(ToDo)
             let priorityTextCont = document.createElement('div')
             li.appendChild(priorityTextCont)
             priorityTextCont.setAttribute('class', 'priorityCont')
@@ -151,9 +119,7 @@ toDoAdd.addEventListener('click', function(){
             priorityText.setAttribute('class', 'toDoPriorityNormal')
             priorityText.innerHTML = 'Normal'
             priorityTextCont.appendChild(priorityText)
-            let delBtn = document.createElement('button')
-            delBtn.setAttribute('class', 'deleteBtn')
-            delBtn.innerHTML = 'Delete'
+            let delBtn = createDeleteButton()
             priorityTextCont.appendChild(delBtn)
             localStorage.setItem('priority', JSON.stringify(priorityList))
             li.scrollIntoView({behavior: 'smooth', block:"center"})
@@ -161,11 +127,7 @@ toDoAdd.addEventListener('click', function(){
         else if(priority == 'low'){
             itemList.push(ToDo)
             localStorage.setItem('ToDo', JSON.stringify(itemList))
-            let li = document.createElement('li')
-            li.setAttribute('class', 'listItem')
-            lsitContainer.appendChild(li)
-            li.innerText = ToDo
-            priorityIcon.style.display = 'none'
+            let li = createListLocal(ToDo)
             let priorityTextCont = document.createElement('div')
             li.appendChild(priorityTextCont)
             priorityTextCont.setAttribute('class', 'priorityCont')
@@ -173,31 +135,42 @@ toDoAdd.addEventListener('click', function(){
             priorityText.setAttribute('class', 'toDoPriorityLow')
             priorityText.innerHTML = 'Low'
             priorityTextCont.appendChild(priorityText)
-            let delBtn = document.createElement('button')
-            delBtn.setAttribute('class', 'deleteBtn')
-            delBtn.innerHTML = 'Delete'
+            let delBtn = createDeleteButton()
             priorityTextCont.appendChild(delBtn)
             localStorage.setItem('priority', JSON.stringify(priorityList))
             li.scrollIntoView({behavior: 'smooth', block:"center"})
         } else {
             itemList.push(ToDo)
             localStorage.setItem('ToDo', JSON.stringify(itemList))
-            let li = document.createElement('li')
-            li.setAttribute('class', 'listItem')
-            lsitContainer.appendChild(li)
-            li.innerText = ToDo
-            priorityIcon.style.display = 'none'
+            let li = createListLocal(ToDo)
             let priorityTextCont = document.createElement('div')
             li.appendChild(priorityTextCont)
             priorityTextCont.setAttribute('class', 'priorityCont')
-            let delBtn = document.createElement('button')
-            delBtn.setAttribute('class', 'deleteBtn')
-            delBtn.innerHTML = 'Delete'
+            let delBtn = createDeleteButton()
             priorityTextCont.appendChild(delBtn)
             localStorage.setItem('priority', JSON.stringify(priorityList))
             li.scrollIntoView({behavior: 'smooth', block:"center"})
         }
-    }
+
+        if(priority == 'urgent'){
+            priorityList.push(priority)
+            priority = undefined
+        } else if(priority == 'normal'){
+            priorityList.push(priority)
+            priority = undefined
+        } else if(priority == 'low'){
+            priorityList.push(priority)
+            priority = undefined
+        } else if(priority == 'high'){
+            priorityList.push(priority)
+            priority = undefined
+        } else if(priority == 'none'){
+            priorityList.push(priority)
+            priority = undefined
+        }  else {
+            priorityList.push('none')
+            priority = undefined
+        }
 
     localStorage.setItem('priority', JSON.stringify(priorityList))
 
@@ -236,9 +209,7 @@ for (let i = 0; i < itemList.length; i++) {
       prioritySpan.innerHTML = priorityList[i];
       prioritySpan.setAttribute('class', 'toDoPriorityUrgent');
       priorityCont.appendChild(prioritySpan);
-      let delBtn = document.createElement('button')
-      delBtn.setAttribute('class', 'deleteBtn')
-      delBtn.innerHTML = 'Delete'
+      let delBtn = createDeleteButton()
       priorityCont.appendChild(delBtn)
     }
     else if(priorityList[i] == 'high'){
@@ -249,9 +220,7 @@ for (let i = 0; i < itemList.length; i++) {
         prioritySpan.innerHTML = priorityList[i];
         prioritySpan.setAttribute('class', 'toDoPriorityHigh');
         priorityCont.appendChild(prioritySpan);
-        let delBtn = document.createElement('button')
-        delBtn.setAttribute('class', 'deleteBtn')
-        delBtn.innerHTML = 'Delete'
+        let delBtn = createDeleteButton()
         priorityCont.appendChild(delBtn)
     } else if(priorityList[i] == 'normal'){
         const priorityCont = document.createElement('div');
@@ -261,9 +230,7 @@ for (let i = 0; i < itemList.length; i++) {
         prioritySpan.innerHTML = priorityList[i];
         prioritySpan.setAttribute('class', 'toDoPriorityNormal');
         priorityCont.appendChild(prioritySpan);
-        let delBtn = document.createElement('button')
-        delBtn.setAttribute('class', 'deleteBtn')
-        delBtn.innerHTML = 'Delete'
+        let delBtn = createDeleteButton()
         priorityCont.appendChild(delBtn)
     } else if(priorityList[i] == 'low'){
         const priorityCont = document.createElement('div');
@@ -273,17 +240,13 @@ for (let i = 0; i < itemList.length; i++) {
         prioritySpan.innerHTML = priorityList[i];
         prioritySpan.setAttribute('class', 'toDoPriorityLow');
         priorityCont.appendChild(prioritySpan);
-        let delBtn = document.createElement('button')
-        delBtn.setAttribute('class', 'deleteBtn')
-        delBtn.innerHTML = 'Delete'
+        let delBtn = createDeleteButton()
         priorityCont.appendChild(delBtn)
     } else {
         const priorityCont = document.createElement('div');
         priorityCont.setAttribute('class', 'priorityCont');
         li.appendChild(priorityCont);
-        let delBtn = document.createElement('button')
-        delBtn.setAttribute('class', 'deleteBtn')
-        delBtn.innerHTML = 'Delete'
+        let delBtn = createDeleteButton()
         priorityCont.appendChild(delBtn)
     }
     
@@ -321,3 +284,18 @@ function topFunction() {
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
 
+function createListLocal(ToDo){
+    let li = document.createElement('li')
+    li.setAttribute('class', 'listItem')
+    lsitContainer.appendChild(li)
+    li.innerText = ToDo
+    priorityIcon.style.display = 'none'
+    return li;
+}
+
+function createDeleteButton(){
+    let delBtn = document.createElement('button')
+    delBtn.setAttribute('class', 'deleteBtn')
+    delBtn.innerHTML = 'Delete'
+    return delBtn;
+}
