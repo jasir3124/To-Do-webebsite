@@ -59,10 +59,10 @@ body{
 .stickyWall h1{
     margin-left: 20px;
     font-size: 3rem;
-    background: linear-gradient(90deg, #8E2DE2 , #4A00E0 );
+    /* background: linear-gradient(90deg, #8E2DE2 , #4A00E0 );
     width: fit-content;
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent; */
 }
 .stickyWallContainer{
     width: 100%;

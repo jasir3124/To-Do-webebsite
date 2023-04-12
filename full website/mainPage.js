@@ -107,6 +107,10 @@ toDoAdd.addEventListener('click', function(){
             priorityText.setAttribute('class', 'toDoPriorityUrgent')
             priorityText.innerHTML = 'Urgent'
             priorityTextCont.appendChild(priorityText)
+            let delBtn = document.createElement('button')
+            delBtn.setAttribute('class', 'deleteBtn')
+            delBtn.innerHTML = 'Delete'
+            priorityTextCont.appendChild(delBtn)
             localStorage.setItem('priority', JSON.stringify(priorityList))
             li.scrollIntoView({behavior: 'smooth', block:"center"})
         } 
@@ -125,6 +129,10 @@ toDoAdd.addEventListener('click', function(){
             priorityText.setAttribute('class', 'toDoPriorityHigh')
             priorityText.innerHTML = 'High'
             priorityTextCont.appendChild(priorityText)
+            let delBtn = document.createElement('button')
+            delBtn.setAttribute('class', 'deleteBtn')
+            delBtn.innerHTML = 'Delete'
+            priorityTextCont.appendChild(delBtn)
             localStorage.setItem('priority', JSON.stringify(priorityList))
             li.scrollIntoView({behavior: 'smooth', block:"center"})
         } 
@@ -143,6 +151,10 @@ toDoAdd.addEventListener('click', function(){
             priorityText.setAttribute('class', 'toDoPriorityNormal')
             priorityText.innerHTML = 'Normal'
             priorityTextCont.appendChild(priorityText)
+            let delBtn = document.createElement('button')
+            delBtn.setAttribute('class', 'deleteBtn')
+            delBtn.innerHTML = 'Delete'
+            priorityTextCont.appendChild(delBtn)
             localStorage.setItem('priority', JSON.stringify(priorityList))
             li.scrollIntoView({behavior: 'smooth', block:"center"})
         }
@@ -161,6 +173,10 @@ toDoAdd.addEventListener('click', function(){
             priorityText.setAttribute('class', 'toDoPriorityLow')
             priorityText.innerHTML = 'Low'
             priorityTextCont.appendChild(priorityText)
+            let delBtn = document.createElement('button')
+            delBtn.setAttribute('class', 'deleteBtn')
+            delBtn.innerHTML = 'Delete'
+            priorityTextCont.appendChild(delBtn)
             localStorage.setItem('priority', JSON.stringify(priorityList))
             li.scrollIntoView({behavior: 'smooth', block:"center"})
         } else {
@@ -171,6 +187,13 @@ toDoAdd.addEventListener('click', function(){
             lsitContainer.appendChild(li)
             li.innerText = ToDo
             priorityIcon.style.display = 'none'
+            let priorityTextCont = document.createElement('div')
+            li.appendChild(priorityTextCont)
+            priorityTextCont.setAttribute('class', 'priorityCont')
+            let delBtn = document.createElement('button')
+            delBtn.setAttribute('class', 'deleteBtn')
+            delBtn.innerHTML = 'Delete'
+            priorityTextCont.appendChild(delBtn)
             localStorage.setItem('priority', JSON.stringify(priorityList))
             li.scrollIntoView({behavior: 'smooth', block:"center"})
         }
@@ -182,8 +205,9 @@ toDoAdd.addEventListener('click', function(){
     console.log(priorityList)
 })
 
+
 window.addEventListener('load', function(){
-    let storage =JSON.parse(localStorage.getItem('ToDo'))
+    let storage = JSON.parse(localStorage.getItem('ToDo'))
 
     if(storage){
         itemList.push(...storage)
@@ -199,18 +223,73 @@ window.addEventListener('load', function(){
     console.log(itemList)
 
 
-    // itemList.forEach(function(item){
-    //     let li = document.createElement('li')
-    //     lsitContainer.appendChild(li)
-    //     li.innerText = item
-    //     li.setAttribute('class', 'listItem')
-    // })
-
-        itemList.forEach(function(item){
-            
-    })
+for (let i = 0; i < itemList.length; i++) {
+    const li = document.createElement('li');
+    li.setAttribute('class', 'listItem');
+    li.innerText = itemList[i];
+    
+    if (priorityList[i] == 'urgent') {
+      const priorityCont = document.createElement('div');
+      priorityCont.setAttribute('class', 'priorityCont');
+      li.appendChild(priorityCont);
+      const prioritySpan = document.createElement('span');
+      prioritySpan.innerHTML = priorityList[i];
+      prioritySpan.setAttribute('class', 'toDoPriorityUrgent');
+      priorityCont.appendChild(prioritySpan);
+      let delBtn = document.createElement('button')
+      delBtn.setAttribute('class', 'deleteBtn')
+      delBtn.innerHTML = 'Delete'
+      priorityCont.appendChild(delBtn)
+    }
+    else if(priorityList[i] == 'high'){
+        const priorityCont = document.createElement('div');
+        priorityCont.setAttribute('class', 'priorityCont');
+        li.appendChild(priorityCont);
+        const prioritySpan = document.createElement('span');
+        prioritySpan.innerHTML = priorityList[i];
+        prioritySpan.setAttribute('class', 'toDoPriorityHigh');
+        priorityCont.appendChild(prioritySpan);
+        let delBtn = document.createElement('button')
+        delBtn.setAttribute('class', 'deleteBtn')
+        delBtn.innerHTML = 'Delete'
+        priorityCont.appendChild(delBtn)
+    } else if(priorityList[i] == 'normal'){
+        const priorityCont = document.createElement('div');
+        priorityCont.setAttribute('class', 'priorityCont');
+        li.appendChild(priorityCont);
+        const prioritySpan = document.createElement('span');
+        prioritySpan.innerHTML = priorityList[i];
+        prioritySpan.setAttribute('class', 'toDoPriorityNormal');
+        priorityCont.appendChild(prioritySpan);
+        let delBtn = document.createElement('button')
+        delBtn.setAttribute('class', 'deleteBtn')
+        delBtn.innerHTML = 'Delete'
+        priorityCont.appendChild(delBtn)
+    } else if(priorityList[i] == 'low'){
+        const priorityCont = document.createElement('div');
+        priorityCont.setAttribute('class', 'priorityCont');
+        li.appendChild(priorityCont);
+        const prioritySpan = document.createElement('span');
+        prioritySpan.innerHTML = priorityList[i];
+        prioritySpan.setAttribute('class', 'toDoPriorityLow');
+        priorityCont.appendChild(prioritySpan);
+        let delBtn = document.createElement('button')
+        delBtn.setAttribute('class', 'deleteBtn')
+        delBtn.innerHTML = 'Delete'
+        priorityCont.appendChild(delBtn)
+    } else {
+        const priorityCont = document.createElement('div');
+        priorityCont.setAttribute('class', 'priorityCont');
+        li.appendChild(priorityCont);
+        let delBtn = document.createElement('button')
+        delBtn.setAttribute('class', 'deleteBtn')
+        delBtn.innerHTML = 'Delete'
+        priorityCont.appendChild(delBtn)
+    }
+    
+    lsitContainer.appendChild(li);
+  }
 })
-
 
 // shows username
 let usernameText = document.querySelector('.username')
