@@ -5,22 +5,21 @@ let list1 = document.querySelector('.listContainer1')
 
 stickyNote1AddBtn1.addEventListener('click', function(){
     let value = stickyNote1Input1.value
-    let bolean = false
+
     if (value == ''){
         document.querySelector('.inputError1').style.visibility = 'visible'
-    } else {
-        bolean = true
-        document.querySelector('.inputError1').style.visibility = 'hidden'
+        return
     }
 
-    if(bolean){
         listArray1.push(value)
         let li = document.createElement('li')
+        li.setAttribute('class', 'listItem')
         list1.appendChild(li)
         li.innerHTML = value
+        let icon = iconDelete()
+        li.appendChild(icon)
         stickyNote1Input1.value =  ''   
         localStorage.setItem('stickyNote1', JSON.stringify(listArray1))
-    }
 })
 
 window.addEventListener('load', function(){
@@ -34,6 +33,9 @@ window.addEventListener('load', function(){
         let li = document.createElement('li')
         list1.appendChild(li)
         li.innerText = item
+        let icon = iconDelete()
+        li.appendChild(icon)
+        li.setAttribute('class', 'listItem')
     })
 })
 
@@ -45,22 +47,22 @@ let list2 = document.querySelector('.listContainer2')
 
 stickyNote1AddBtn2.addEventListener('click', function(){
     let value = stickyNote1Input2.value
-    let bolean = false
+
     if (value == ''){
         document.querySelector('.inputError2').style.visibility = 'visible'
-    } else {
-        bolean = true
-        document.querySelector('.inputError2').style.visibility = 'hidden'
-    }
+        return
+    } 
 
-    if(bolean){
+
         listArray2.push(value)
         let li = document.createElement('li')
+        li.setAttribute('class', 'listItem')
         list2.appendChild(li)
         li.innerHTML = value
+        let icon = iconDelete()
+        li.appendChild(icon)
         stickyNote1Input2.value =  ''   
         localStorage.setItem('stickyNote2', JSON.stringify(listArray2))
-    }
 })
 
 window.addEventListener('load', function(){
@@ -72,8 +74,11 @@ window.addEventListener('load', function(){
 
     listArray2.forEach(function(item2){
         let li = document.createElement('li')
+        li.setAttribute('class', 'listItem')
         list2.appendChild(li)
         li.innerText = item2
+        let icon = iconDelete()
+        li.appendChild(icon)
     })
 })
 
@@ -87,22 +92,20 @@ let list3 = document.querySelector('.listContainer3')
 
 stickyNote1AddBtn3.addEventListener('click', function(){
     let value = stickyNote1Input3.value
-    let bolean = false
     if (value == ''){
         document.querySelector('.inputError3').style.visibility = 'visible'
-    } else {
-        bolean = true
-        document.querySelector('.inputError3').style.visibility = 'hidden'
+        return
     }
 
-    if(bolean){
         listArray3.push(value)
         let li = document.createElement('li')
+        li.setAttribute('class', 'listItem')
         list3.appendChild(li)
         li.innerHTML = value
+        let icon = iconDelete()
+        li.appendChild(icon)
         stickyNote1Input3.value =  ''   
         localStorage.setItem('stickyNote3', JSON.stringify(listArray3))
-    }
 })
 
 window.addEventListener('load', function(){
@@ -114,8 +117,11 @@ window.addEventListener('load', function(){
 
     listArray3.forEach(function(item3){
         let li = document.createElement('li')
+        li.setAttribute('class', 'listItem')
         list3.appendChild(li)
         li.innerText = item3
+        let icon = iconDelete()
+        li.appendChild(icon)
     })
 })
 
@@ -131,3 +137,9 @@ function showUsername(){
     }
 }
 showUsername()
+
+function iconDelete(){
+    let icon = document.createElement('i')
+    icon.classList.add('fa-solid', 'fa-xmark', 'iconRight')
+    return icon
+}

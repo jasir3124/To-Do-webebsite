@@ -106,16 +106,16 @@ body{
     color: white;
 }
 .listFlash{
-    animation : flash 2s;
+    animation : flash 300ms;
 }
-@keyframes flash{
-    0%{
+@keyframes flash {
+    0% {
         opacity: 1;
     }
-    50%{
+    50% {
         opacity: 0;
     }
-    100%{
+    100% {
         opacity: 1;
     }
 }

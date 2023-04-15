@@ -59,10 +59,6 @@ body{
 .stickyWall h1{
     margin-left: 20px;
     font-size: 3rem;
-    /* background: linear-gradient(90deg, #8E2DE2 , #4A00E0 );
-    width: fit-content;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; */
 }
 .stickyWallContainer{
     width: 100%;
@@ -78,13 +74,13 @@ body{
 .stickyWall2{
     width: 30%;
     background-color: 	rgba(173,216,230, 0.7);
-    height: 300px;
+    min-height: 300px;
     padding: 20px;
 }
 .stickyWall3{
     width: 30%;
     background-color: rgba(199, 77, 183, 0.5);
-    height: 300px;
+    min-height: 300px;
     padding: 20px;
 }
 .stickyWallInput1,
@@ -144,4 +140,13 @@ body{
 .listContainer2 li,
 .listContainer3 li{
     word-break: break-all;
+}
+.listItem{
+    position: relative;
+    margin: 3px;
+}
+.iconRight{
+    position: absolute;
+    right: 0px;
+    bottom: 3px;
 }

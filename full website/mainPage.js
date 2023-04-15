@@ -3,7 +3,7 @@
 // to-do variables
 let ToDoInput = document.querySelector('.ToDoInput')
 let toDoAdd = document.querySelector('.addToDo')
-let lsitContainer = document.querySelector('.listContainer')
+let listContainer = document.querySelector('.listContainer')
 let itemList = []
 
 // priority vaiables
@@ -78,6 +78,7 @@ toDoAdd.addEventListener('click', function(){
             let li = createListLocal(ToDo)
             let priorityCont = createPriorityCont()
             let delBtn = createDeleteButton()
+            listContainer.appendChild(li)
             li.appendChild(priorityCont)
             let priorityText = document.createElement('span')
             let priorityClass;
@@ -99,11 +100,7 @@ toDoAdd.addEventListener('click', function(){
             priorityCont.appendChild(priorityText)
             priorityCont.appendChild(delBtn)
             li.scrollIntoView({behavior: 'smooth', block:"center"})
-            flashList(li)
-            if(flashList(li)){
-                // li.classList.add('listFlash')
-                console.log('is in view')
-            }
+            checkInView(li)
 
 
         if(priority == 'Urgent'){
@@ -128,7 +125,7 @@ toDoAdd.addEventListener('click', function(){
 
     localStorage.setItem('priority', JSON.stringify(priorityList))
 
-    
+    console.log(itemList)
     console.log(priorityList)
 })
 
@@ -176,7 +173,7 @@ for (let i = 0; i < itemList.length; i++) {
     prioritySpan.setAttribute('class', priorityClass);
     priorityCont.appendChild(prioritySpan);
     priorityCont.appendChild(delBtn)   
-    lsitContainer.appendChild(li);
+    listContainer.appendChild(li);
   }
 })
 
@@ -213,7 +210,6 @@ function topFunction() {
 function createListLocal(ToDo){
     let li = document.createElement('li')
     li.setAttribute('class', 'listItem')
-    lsitContainer.appendChild(li)
     li.innerText = ToDo
     priorityIcon.style.display = 'none'
     return li;
@@ -237,3 +233,14 @@ function flashList(li){
         let viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
         return !(rect.bottom < 0 || rect.top - viewHeight >= 0);
 }
+function checkInView(li) {
+    let intervalId = setInterval(function() {
+      let isInView = flashList(li);
+      if (isInView) {
+        clearInterval(intervalId);
+        console.log('is in view');
+        li.classList.add('listFlash')
+      }
+    }, 100);
+  }
+// localStorage.clear()
