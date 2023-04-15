@@ -72,80 +72,39 @@ toDoAdd.addEventListener('click', function(){
         return
     } 
 
-        if(priority == 'Urgent'){
+
             itemList.push(ToDo)
             localStorage.setItem('ToDo', JSON.stringify(itemList))
             let li = createListLocal(ToDo)
             let priorityCont = createPriorityCont()
+            let delBtn = createDeleteButton()
             li.appendChild(priorityCont)
             let priorityText = document.createElement('span')
-            priorityText.setAttribute('class', 'toDoPriorityUrgent')
-            priorityText.innerHTML = 'Urgent'
+            let priorityClass;
+            switch(priority){
+                case 'Urgent': priorityClass = 'toDoPriorityUrgent'
+                break;
+                case 'High': priorityClass = 'toDoPriorityHigh'
+                break;
+                case 'Normal': priorityClass = 'toDoPriorityNormal'
+                break;
+                case 'Low': priorityClass = 'toDoPriorityLow'
+                break ;
+                case 'None': priorityText.style.display = 'none'
+                break ;
+                case undefined : priorityText.style.display = 'none'
+            }
+            priorityText.setAttribute('class', priorityClass)
+            priorityText.innerHTML = priority
             priorityCont.appendChild(priorityText)
-            let delBtn = createDeleteButton()
             priorityCont.appendChild(delBtn)
-            localStorage.setItem('priority', JSON.stringify(priorityList))
             li.scrollIntoView({behavior: 'smooth', block:"center"})
-        }
-        else if (priority == 'High'){
-            itemList.push(ToDo)
-            localStorage.setItem('ToDo', JSON.stringify(itemList))
-            let li = createListLocal(ToDo)
-            let priorityCont = document.createElement('div')
-            li.appendChild(priorityCont)
-            priorityCont.setAttribute('class', 'priorityCont')
-            let priorityText = document.createElement('span')
-            priorityText.setAttribute('class', 'toDoPriorityHigh')
-            priorityText.innerHTML = 'High'
-            priorityCont.appendChild(priorityText)
-            let delBtn = createDeleteButton()
-            priorityCont.appendChild(delBtn)
-            localStorage.setItem('priority', JSON.stringify(priorityList))
-            li.scrollIntoView({behavior: 'smooth', block:"center"})
-        } 
-        else if(priority == 'Normal'){
-            itemList.push(ToDo)
-            localStorage.setItem('ToDo', JSON.stringify(itemList))
-            let li = createListLocal(ToDo)
-            let priorityCont = document.createElement('div')
-            li.appendChild(priorityCont)
-            priorityCont.setAttribute('class', 'priorityCont')
-            let priorityText = document.createElement('span')
-            priorityText.setAttribute('class', 'toDoPriorityNormal')
-            priorityText.innerHTML = 'Normal'
-            priorityCont.appendChild(priorityText)
-            let delBtn = createDeleteButton()
-            priorityCont.appendChild(delBtn)
-            localStorage.setItem('priority', JSON.stringify(priorityList))
-            li.scrollIntoView({behavior: 'smooth', block:"center"})
-        }
-        else if(priority == 'Low'){
-            itemList.push(ToDo)
-            localStorage.setItem('ToDo', JSON.stringify(itemList))
-            let li = createListLocal(ToDo)
-            let priorityCont = document.createElement('div')
-            li.appendChild(priorityCont)
-            priorityCont.setAttribute('class', 'priorityCont')
-            let priorityText = document.createElement('span')
-            priorityText.setAttribute('class', 'toDoPriorityLow')
-            priorityText.innerHTML = 'Low'
-            priorityCont.appendChild(priorityText)
-            let delBtn = createDeleteButton()
-            priorityCont.appendChild(delBtn)
-            localStorage.setItem('priority', JSON.stringify(priorityList))
-            li.scrollIntoView({behavior: 'smooth', block:"center"})
-        } else {
-            itemList.push(ToDo)
-            localStorage.setItem('ToDo', JSON.stringify(itemList))
-            let li = createListLocal(ToDo)
-            let priorityCont = document.createElement('div')
-            li.appendChild(priorityCont)
-            priorityCont.setAttribute('class', 'priorityCont')
-            let delBtn = createDeleteButton()
-            priorityCont.appendChild(delBtn)
-            localStorage.setItem('priority', JSON.stringify(priorityList))
-            li.scrollIntoView({behavior: 'smooth', block:"center"})
-        }
+            flashList(li)
+            if(flashList(li)){
+                // li.classList.add('listFlash')
+                console.log('is in view')
+            }
+
 
         if(priority == 'Urgent'){
             priorityList.push(priority)
@@ -163,13 +122,13 @@ toDoAdd.addEventListener('click', function(){
             priorityList.push(priority)
             priority = undefined
         }  else {
-            priorityList.push('none')
+            priorityList.push('None')
             priority = undefined
         }
 
     localStorage.setItem('priority', JSON.stringify(priorityList))
 
-    console.log(priority)
+    
     console.log(priorityList)
 })
 
@@ -193,53 +152,30 @@ window.addEventListener('load', function(){
 
 for (let i = 0; i < itemList.length; i++) {
     const li = document.createElement('li');
+    let delBtn = createDeleteButton()
+    const priorityCont = createPriorityCont()
+    const prioritySpan = document.createElement('span');
     li.setAttribute('class', 'listItem');
     li.innerText = itemList[i];
-    
-    if (priorityList[i] == 'Urgent') {
-      const priorityCont = createPriorityCont()
-      li.appendChild(priorityCont);
-      const prioritySpan = document.createElement('span');
-      prioritySpan.innerHTML = priorityList[i];
-      prioritySpan.setAttribute('class', 'toDoPriorityUrgent');
-      priorityCont.appendChild(prioritySpan);
-      let delBtn = createDeleteButton()
-      priorityCont.appendChild(delBtn)
+    let priorityClass;
+    switch(priorityList[i]){
+        case 'Urgent': priorityClass = 'toDoPriorityUrgent'
+        break;
+        case 'High': priorityClass = 'toDoPriorityHigh'
+        break;
+        case 'Normal': priorityClass = 'toDoPriorityNormal'
+        break;
+        case 'Low': priorityClass = 'toDoPriorityLow'
+        break ;
+        case 'None': prioritySpan.style.display = 'none'
+        break ;
+        case undefined : prioritySpan.style.display = 'none'
     }
-    else if(priorityList[i] == 'High'){
-        const priorityCont = createPriorityCont()
-        li.appendChild(priorityCont);
-        const prioritySpan = document.createElement('span');
-        prioritySpan.innerHTML = priorityList[i];
-        prioritySpan.setAttribute('class', 'toDoPriorityHigh');
-        priorityCont.appendChild(prioritySpan);
-        let delBtn = createDeleteButton()
-        priorityCont.appendChild(delBtn)
-    } else if(priorityList[i] == 'Normal'){
-        const priorityCont = createPriorityCont()
-        li.appendChild(priorityCont);
-        const prioritySpan = document.createElement('span');
-        prioritySpan.innerHTML = priorityList[i];
-        prioritySpan.setAttribute('class', 'toDoPriorityNormal');
-        priorityCont.appendChild(prioritySpan);
-        let delBtn = createDeleteButton()
-        priorityCont.appendChild(delBtn)
-    } else if(priorityList[i] == 'Low'){
-        const priorityCont = createPriorityCont()
-        li.appendChild(priorityCont);
-        const prioritySpan = document.createElement('span');
-        prioritySpan.innerHTML = priorityList[i];
-        prioritySpan.setAttribute('class', 'toDoPriorityLow');
-        priorityCont.appendChild(prioritySpan);
-        let delBtn = createDeleteButton()
-        priorityCont.appendChild(delBtn)
-    } else {
-        const priorityCont = createPriorityCont()
-        li.appendChild(priorityCont);
-        let delBtn = createDeleteButton()
-        priorityCont.appendChild(delBtn)
-    }
-    
+    li.appendChild(priorityCont);
+    prioritySpan.innerHTML = priorityList[i];
+    prioritySpan.setAttribute('class', priorityClass);
+    priorityCont.appendChild(prioritySpan);
+    priorityCont.appendChild(delBtn)   
     lsitContainer.appendChild(li);
   }
 })
@@ -290,9 +226,14 @@ function createDeleteButton(){
     return delBtn;
 }
 
-
 function createPriorityCont(){
     let priorityCont = document.createElement('div')
     priorityCont.setAttribute('class', 'priorityCont')
     return priorityCont
+}
+
+function flashList(li){
+        let rect = li.getBoundingClientRect();
+        let viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
+        return !(rect.bottom < 0 || rect.top - viewHeight >= 0);
 }

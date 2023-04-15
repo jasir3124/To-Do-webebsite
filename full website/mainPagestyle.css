@@ -105,6 +105,20 @@ body{
     background: linear-gradient(to right, var(--bs-aminGradient)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     color: white;
 }
+.listFlash{
+    animation : flash 2s;
+}
+@keyframes flash{
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
 .priorityText{
     position: absolute;
     background-color: var(--bs-danger);
