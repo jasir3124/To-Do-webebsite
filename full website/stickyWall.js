@@ -10,7 +10,7 @@ stickyNote1AddBtn1.addEventListener('click', function(){
         document.querySelector('.inputError1').style.visibility = 'visible'
         return
     }
-
+    document.querySelector('.inputError1').style.visibility = 'hidden'
         listArray1.push(value)
         let li = document.createElement('li')
         li.setAttribute('class', 'listItem')
@@ -53,7 +53,7 @@ stickyNote1AddBtn2.addEventListener('click', function(){
         return
     } 
 
-
+    document.querySelector('.inputError1').style.visibility = 'hidden'
         listArray2.push(value)
         let li = document.createElement('li')
         li.setAttribute('class', 'listItem')
@@ -97,6 +97,7 @@ stickyNote1AddBtn3.addEventListener('click', function(){
         return
     }
 
+        document.querySelector('.inputError1').style.visibility = 'hidden'
         listArray3.push(value)
         let li = document.createElement('li')
         li.setAttribute('class', 'listItem')
@@ -143,3 +144,4 @@ function iconDelete(){
     icon.classList.add('fa-solid', 'fa-xmark', 'iconRight')
     return icon
 }
+
