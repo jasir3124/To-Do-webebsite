@@ -207,18 +207,21 @@ function topFunction() {
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
 
-function createListLocal(ToDo){
-    let li = document.createElement('li')
-    li.setAttribute('class', 'listItem')
-    li.innerText = ToDo
-    priorityIcon.style.display = 'none'
-    return li;
-}
-
 function createDeleteButton(){
     let delBtn = document.createElement('button')
     delBtn.setAttribute('class', 'deleteBtn')
     delBtn.innerHTML = 'Delete'
+    delBtn.addEventListener('click', function(){
+        let li = this.parentNode.parentNode;
+        let liclass = li.getAttribute('class')
+        console.log(`this is the id of the li ${liclass}`)
+        let index = Array.from(li.parentNode.children).indexOf(li);
+        itemList.splice(index, 1)
+        localStorage.setItem('ToDo', JSON.stringify(itemList))
+        priorityList.splice(index, 1)
+        localStorage.setItem('priority', JSON.stringify(priorityList))
+        li.remove();
+    });
     return delBtn;
 }
 
@@ -226,6 +229,14 @@ function createPriorityCont(){
     let priorityCont = document.createElement('div')
     priorityCont.setAttribute('class', 'priorityCont')
     return priorityCont
+}
+
+function createListLocal(ToDo){
+    let li = document.createElement('li')
+    li.setAttribute('class', 'listItem')
+    li.innerText = ToDo
+    priorityIcon.style.display = 'none'
+    return li;
 }
 
 function flashList(li){

@@ -145,4 +145,4 @@ function iconDelete(){
     return icon
 }
 
-localStorage.clear()
+// localStorage.clear()
