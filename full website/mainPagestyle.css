@@ -290,3 +290,14 @@ body{
     border: 0;
     color: white;
 }
+.changeUsrename{
+    all: unset;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #8E2DE2 , #4A00E0 );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 23px;
+}
+.username{
+    line-height: normal !important;
+}
