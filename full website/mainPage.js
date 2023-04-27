@@ -189,6 +189,16 @@ function showUsername(){
 }
 showUsername()
 
+// change username button
+let changeUsernameBtn = document.querySelector('.changeUsername')
+let tooltip = document.getElementById('tooltip854742')
+changeUsernameBtn.addEventListener('click', function(){
+    this.remove()
+    tooltip.remove()
+    let cancelBtn = document.createElement(button)
+    let savceButton = document.createElement(button)
+}) 
+
 // scroll to top btn
 let mybutton = document.getElementById("myBtn");
 
@@ -254,4 +264,10 @@ function checkInView(li) {
       }
     }, 100);
   }
+
+var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+  return new bootstrap.Tooltip(tooltipTriggerEl)
+})
+
 // localStorage.clear()
