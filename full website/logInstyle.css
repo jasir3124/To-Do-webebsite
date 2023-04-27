@@ -31,7 +31,7 @@
 }
 body{
     height: 95svh;
-    display: grid;
+    display: flex;
     justify-content: center;
     align-items: center;
     background: #b92b27;  /* fallback for old browsers */
@@ -39,7 +39,7 @@ body{
     background: linear-gradient(to right, #8E2DE2, #4A00E0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 .logInForm{
-    color: white;
+    background-color: var(--bs-aminGradient);
     display: grid;
     width: 405px;
     border: 2px solid var(--bs-lightBlue);
@@ -47,6 +47,9 @@ body{
     box-shadow: 0px 0px 60px 60px rgba(51, 141, 194, 0.75);
     border-radius: 1rem;
     transition: transform 0.2s ease-in-out;
+    position: relative;
+    z-index: 999;
+    margin-left: 100px;
 }
 .floatingInput{
     color: black !important;
@@ -100,3 +103,36 @@ body{
     outline: none;
     border-radius: 3px;
 }
+.titleCont{
+    position: relative;
+    left: auto;
+    color: white;
+}
+.title{
+    font-size: 70px !important;
+}
+@media only screen and (max-width: 900px){
+    body{
+        margin-right: 50px;
+    }
+    .title{
+        font-size: 50px;
+    }
+}
+@media only screen and (max-width: 700px){
+    .title{
+        font-size: 35px;
+    }
+}
+
+.ml13 {
+    font-size: 1.9em;
+    text-transform: uppercase;
+    letter-spacing: 0.5em;
+    font-weight: 600;
+  }
+  
+  .ml13 .letter {
+    display: inline-block;
+    line-height: 1em;
+  }
