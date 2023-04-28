@@ -10,7 +10,7 @@ stickyNote1AddBtn1.addEventListener('click', function(){
         document.querySelector('.inputError1').style.visibility = 'visible'
         return
     }
-    alert('stickyNote')
+
         document.querySelector('.inputError1').style.visibility = 'hidden'
         listArray1.push(value)
         let li = document.createElement('li')
@@ -200,4 +200,4 @@ function iconDelete3(){
     return icon3
 }
 
-localStorage.clear()
+// localStorage.clear()

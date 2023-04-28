@@ -191,12 +191,13 @@ showUsername()
 
 //todo change username button
 let changeUsernameBtn = document.querySelector('.changeUsername')
-let tooltip = document.getElementById('tooltip854742')
+let tooltip = document.querySelector('.changeUsername')
 changeUsernameBtn.addEventListener('click', function(){
     this.remove()
-    tooltip.remove()
-    let cancelBtn = document.createElement(button)
-    let savceButton = document.createElement(button)
+    tooltip.removeAttribute('data-bs-toggle', 'tooltip')
+    // let cancelBtn = document.createElement(button)
+    // let savceButton = document.createElement(button)
+
 }) 
 
 // scroll to top btn
@@ -264,13 +265,5 @@ function checkInView(li) {
     let viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
     return !(rect.bottom < 0 || rect.top - viewHeight >= 0);
 }
-
-
-
-
-var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-  return new bootstrap.Tooltip(tooltipTriggerEl)
-})
 
 // localStorage.clear()

@@ -301,3 +301,19 @@ body{
 .username{
     line-height: normal !important;
 }
+  .changeUsername .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+  
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+  }
+  .changeUsername:hover .tooltiptext {
+    visibility: visible;
+  }
