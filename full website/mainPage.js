@@ -224,8 +224,6 @@ function createDeleteButton(){
     delBtn.innerHTML = 'Delete'
     delBtn.addEventListener('click', function(){
         let li = this.parentNode.parentNode;
-        let liclass = li.getAttribute('class')
-        console.log(`this is the id of the li ${liclass}`)
         let index = Array.from(li.parentNode.children).indexOf(li);
         itemList.splice(index, 1)
         localStorage.setItem('ToDo', JSON.stringify(itemList))
