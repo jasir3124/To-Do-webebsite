@@ -217,6 +217,7 @@ function topFunction() {
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
 
+// create delete button
 function createDeleteButton(){
     let delBtn = document.createElement('button')
     delBtn.setAttribute('class', 'deleteBtn')
