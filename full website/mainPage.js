@@ -189,7 +189,7 @@ function showUsername(){
 }
 showUsername()
 
-// change username button
+//todo change username button
 let changeUsernameBtn = document.querySelector('.changeUsername')
 let tooltip = document.getElementById('tooltip854742')
 changeUsernameBtn.addEventListener('click', function(){
@@ -249,11 +249,7 @@ function createListLocal(ToDo){
     return li;
 }
 
-function flashList(li){
-        let rect = li.getBoundingClientRect();
-        let viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
-        return !(rect.bottom < 0 || rect.top - viewHeight >= 0);
-}
+
 function checkInView(li) {
     let intervalId = setInterval(function() {
       let isInView = flashList(li);
@@ -264,6 +260,14 @@ function checkInView(li) {
       }
     }, 100);
   }
+  function flashList(li){
+    let rect = li.getBoundingClientRect();
+    let viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
+    return !(rect.bottom < 0 || rect.top - viewHeight >= 0);
+}
+
+
+
 
 var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
 var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
