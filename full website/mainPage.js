@@ -217,14 +217,13 @@ function topFunction() {
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
 
+// create delete button
 function createDeleteButton(){
     let delBtn = document.createElement('button')
     delBtn.setAttribute('class', 'deleteBtn')
     delBtn.innerHTML = 'Delete'
     delBtn.addEventListener('click', function(){
         let li = this.parentNode.parentNode;
-        let liclass = li.getAttribute('class')
-        console.log(`this is the id of the li ${liclass}`)
         let index = Array.from(li.parentNode.children).indexOf(li);
         itemList.splice(index, 1)
         localStorage.setItem('ToDo', JSON.stringify(itemList))
