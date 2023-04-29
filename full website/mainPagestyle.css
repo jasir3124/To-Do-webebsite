@@ -290,30 +290,3 @@ body{
     border: 0;
     color: white;
 }
-.changeUsername{
-    border: 0;
-    border-radius: 10px;
-    background: linear-gradient(90deg, #8E2DE2 , #4A00E0 );
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: 23px;
-}
-.username{
-    line-height: normal !important;
-}
-  .changeUsername .tooltiptext {
-    visibility: hidden;
-    width: 120px;
-    background-color: black;
-    color: white;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px 0;
-  
-    /* Position the tooltip */
-    position: absolute;
-    z-index: 1;
-  }
-  .changeUsername:hover .tooltiptext {
-    visibility: visible;
-  }

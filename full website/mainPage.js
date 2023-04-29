@@ -189,16 +189,6 @@ function showUsername(){
 }
 showUsername()
 
-//todo change username button
-let changeUsernameBtn = document.querySelector('.changeUsername')
-let tooltip = document.querySelector('.changeUsername')
-changeUsernameBtn.addEventListener('click', function(){
-    this.remove()
-    tooltip.removeAttribute('data-bs-toggle', 'tooltip')
-    // let cancelBtn = document.createElement(button)
-    // let savceButton = document.createElement(button)
-
-}) 
 
 // scroll to top btn
 let mybutton = document.getElementById("myBtn");
