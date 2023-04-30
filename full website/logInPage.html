@@ -12,27 +12,30 @@
 <body>
 
 <div class="titleCont"></div><h1 class="ml13 title">TaskMate</h1></div>
-<form action="" onsubmit="return valid(event)">
-    <div class="logInForm">
-        <h1 class="text-dark">Log In</h1>
-        <label for="email" class="fw-bolder">Email</label>
-        <input id="emailInput" class="emailInput mb-2 bg-dark text-white p-2" type="text" name="email">
-        <span id="emailError" class="emailError">Email is not valid!</span>
-        <label for="password" class="fw-bolder">Password</label>
-        <div class="inputCont">
-            <input id="passwordInput" class="passwordInput mb-2 w-100 bg-dark text-white p-2" type="password" name="password">
-            <i id="togglePassword" class="eye fa-solid fa-eye"></i>
+
+<div class="card">
+    <form action="" onsubmit="return valid(event)">
+        <div class="logInForm">
+            <h1 class="text-white">Log In</h1>
+            <label for="email" class="fw-bolder text-white">Email</label>
+            <input id="emailInput" class="emailInput mb-2 p-2" type="text" name="email">
+            <span id="emailError" class="emailError">Email is not valid!</span>
+            <label for="password" class="fw-bolder text-white">Password</label>
+            <div class="inputCont">
+                <input id="passwordInput" class="passwordInput mb-2 w-100 p-2" type="password" name="password">
+                <i id="togglePassword" class="eye fa-solid fa-eye"></i>
+            </div>
+            <span id="passwordError" class="passwordError">Password is not valid! <br> The password must contain one number & <br> one special character</span>
+            <label for="userName" class="fw-bolder text-white">Username</label>
+            <input type="text" class="usernameInput p-2" id="usernameInput">
+            <span class="text-white mt-2">You will be able to change the username</span>
+            <div class="button-borders">
+                <button type="submit" class="primary-button signUpBtn"> Log In</button>
+              </div>
         </div>
-        <span id="passwordError" class="passwordError">Password is not valid! <br> The password must contain one number & <br> one special character</span>
-        <label for="userName" class="fw-bolder">Username</label>
-        <input type="text" class="usernameInput bg-dark text-white p-2" id="usernameInput">
-        <span class="text-white mt-2">You will be able to change the username</span>
-        <div class="button-borders">
-            <button type="submit" class="primary-button signUpBtn"> BUTTON
-            </button>
-          </div>
-    </div>
-</form>
+    </form>
+</div>
+
 
 
     <script src="anime-master/lib/anime.min.js"></script>
