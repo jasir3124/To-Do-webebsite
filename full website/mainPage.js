@@ -103,25 +103,13 @@ toDoAdd.addEventListener('click', function(){
             checkInView(li)
 
 
-        if(priority == 'Urgent'){
-            priorityList.push(priority)
-            priority = undefined
-        } else if(priority == 'Normal'){
-            priorityList.push(priority)
-            priority = undefined
-        } else if(priority == 'Low'){
-            priorityList.push(priority)
-            priority = undefined
-        } else if(priority == 'High'){
-            priorityList.push(priority)
-            priority = undefined
-        } else if(priority == 'None'){
-            priorityList.push(priority)
-            priority = undefined
-        }  else {
-            priorityList.push('None')
-            priority = undefined
-        }
+            if(priority == 'none' || priority == undefined){
+                priorityList.push('none')
+                priority = undefined
+            } else {
+                priorityList.push(priority)
+                priority = undefined
+            }
 
     localStorage.setItem('priority', JSON.stringify(priorityList))
 
