@@ -56,15 +56,15 @@ body{
 }
 .emailError{
     display: none;
-    color: #3d0b0b;
+    color: red;
 }
 .passwordError{
     display: none;
-    color: #3d0b0b;
+    color: red;
 }
 .usernameError{
     display: none;
-    color: #3d0b0b;
+    color: red;
 }
 .primary-button {
     font-family: 'Ropa Sans', sans-serif;
