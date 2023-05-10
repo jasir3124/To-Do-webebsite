@@ -5,12 +5,15 @@ function valid(event){
 
     let email = document.querySelector('#emailInput').value
     let password = document.getElementById('passwordInput').value
+    let username = document.getElementById('usernameInput').value
     let validEmailRegex =   /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
     let validPasswordRegex =  /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]*$/
-
+    if(username.length > 12){
+      alert('Username must be less than 12 characters long')
+      return false
+    }
      if(email.match(validEmailRegex) && password.match(validPasswordRegex)){
         window.location.href = ('mainPage.html')
-        let username = document.getElementById('usernameInput').value
         localStorage.setItem('username', JSON.stringify(username))
         document.getElementById('passwordInput').style.border = '1.5px solid green'
         document.getElementById('passwordError').style.display = 'none'

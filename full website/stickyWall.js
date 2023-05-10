@@ -17,6 +17,7 @@ stickyNote1AddBtn1.addEventListener('click', function(){
         li.setAttribute('class', 'listItem')
         list1.appendChild(li)
         li.innerHTML = value
+        li.scrollIntoView({behavior: 'smooth', block:"center"})
         let icon = iconDelete1()
         li.appendChild(icon)
         stickyNote1Input1.value =  ''   
@@ -87,9 +88,6 @@ window.addEventListener('load', function(){
         li.appendChild(icon)
     })
 })
-
-
-
 
 
 
@@ -175,6 +173,7 @@ function iconDelete1(){
     });
     return icon
 }
+
 function iconDelete2(){
     let icon2 = document.createElement('i')
     icon2.classList.add('fa-solid', 'fa-xmark', 'iconRight')
@@ -187,6 +186,7 @@ function iconDelete2(){
     });
     return icon2
 }
+
 function iconDelete3(){
     let icon3 = document.createElement('i')
     icon3.classList.add('fa-solid', 'fa-xmark', 'iconRight')

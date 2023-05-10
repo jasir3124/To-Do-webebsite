@@ -1,5 +1,3 @@
-
-
 :root{
     --purple : #BD10E0;
     --bs-indigo: #6610f2;
@@ -59,11 +57,6 @@ body{
 .stickyWall h1{
     margin-left: 20px;
     font-size: 3rem;
-}
-.stickyWallContainer{
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
 }
 .stickyWall1{
     width: 30%;
@@ -135,7 +128,6 @@ body{
 .listContainer2,
 .listContainer3{
     color: #000000;
-    height: auto;
 }
 .listContainer1 li,
 .listContainer2 li,
