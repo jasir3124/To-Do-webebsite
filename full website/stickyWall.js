@@ -199,5 +199,3 @@ function iconDelete3(){
     });
     return icon3
 }
-
-// localStorage.clear()

@@ -374,3 +374,8 @@ body{
     border: 0;
     color: white;
    }
+.inputTitle{
+    background-color: var(--bs-secondary);
+    width: fit-content;
+    padding: 5px;
+}

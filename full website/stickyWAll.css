@@ -61,19 +61,19 @@ body{
 .stickyWall1{
     width: 30%;
     background-color: rgba(255, 255, 0, 0.5);
-    height: auto;
+    min-height: 300px;
     padding: 20px;
 }
 .stickyWall2{
     width: 30%;
     background-color: 	rgba(173,216,230, 0.7);
-    height: auto;
+    min-height: 300px;
     padding: 20px;
 }
 .stickyWall3{
     width: 30%;
     background-color: rgba(199, 77, 183, 0.5);
-    height: auto;
+    min-height: 300px;
     padding: 20px;
 }
 .stickyWallInput1,
