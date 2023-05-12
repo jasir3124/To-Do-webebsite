@@ -104,7 +104,7 @@ toDoAdd.addEventListener('click', function(){
 
 
             if(priority == 'none' || priority == undefined){
-                priorityList.push('none')
+                priorityList.push('None')
                 priority = undefined
             } else {
                 priorityList.push(priority)
@@ -153,8 +153,6 @@ for (let i = 0; i < itemList.length; i++) {
         case 'Low': priorityClass = 'toDoPriorityLow'
         break ;
         case 'None': prioritySpan.style.display = 'none'
-        break ;
-        case undefined : prioritySpan.style.display = 'none'
     }
     li.appendChild(priorityCont);
     prioritySpan.innerHTML = priorityList[i];
