@@ -150,6 +150,8 @@ for (let i = 0; i < itemList.length; i++) {
     const priorityCont = createPriorityCont()
     const prioritySpan = document.createElement('span');
     const timeText = document.createElement('span')
+    let cont = document.createElement('div')
+    cont.classList.add('ms-1' , 'mt-1')
     li.setAttribute('class', 'listItem');
     li.innerText = itemList[i];
     timeText.innerHTML = timeArray[i]
@@ -170,23 +172,31 @@ for (let i = 0; i < itemList.length; i++) {
     prioritySpan.setAttribute('class', priorityClass);
     priorityCont.appendChild(prioritySpan);
     priorityCont.appendChild(delBtn)  
-    priorityCont.appendChild(timeText)
+    cont.appendChild(timeText)
+    priorityCont.appendChild(cont)
     listContainer.appendChild(li);
   }
 })
 
 // show time
+let days = ['Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat', 'Sun']
 function getTimeForToDo(){
+    let cont = document.createElement('div')
+    cont.classList.add('ms-1' , 'mt-1')
     let date = new Date()
+    let day = date.getDay()
     let hours =  date.getHours()
     let minutes = date.getMinutes()
-    let time = hours.toString().padStart(2, '0') + ':' + minutes.toString().padStart(2, '0');
+    let time = days[day] + ' ' + hours.toString().padStart(2, '0') + ':' + minutes.toString().padStart(2, '0');
     timeArray.push(time)
     localStorage.setItem('time', JSON.stringify(timeArray))
     let timeText = document.createElement('span')
     timeText.innerHTML = time
-    return timeText
+    cont.appendChild(timeText)
+    return cont
 }
+
+
 
 // shows username
 let usernameText = document.querySelector('.username')

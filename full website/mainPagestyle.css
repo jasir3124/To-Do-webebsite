@@ -204,6 +204,7 @@ body{
     border-radius: 5px;
     font-size: 15px;
     padding: 3px 13px 3px 13px;
+    margin: 0 10px 0 0;
 }
 .toDoPriorityHigh{
     color: white;
@@ -211,6 +212,7 @@ body{
     border-radius: 5px;
     font-size: 15px;
     padding: 3px 20px 3px 21px;
+    margin: 0 10px 0 0;
 }
 .toDoPriorityNormal{
     color: white;
@@ -218,6 +220,7 @@ body{
     border-radius: 5px;
     font-size: 15px;
     padding: 3px 12px 3px 12px;
+    margin: 0 10px 0 0;
 }
 .toDoPriorityLow{
     color: white;
@@ -225,6 +228,7 @@ body{
     border-radius: 5px;
     font-size: 15px;
     padding: 3px 23px 3px 23px;
+    margin: 0 10px 0 0;
 }
 .priorityCont{
     position: relative;
@@ -346,7 +350,6 @@ body{
     border-radius: 5px;
     font-size: 15px;
     padding: 3px 13px 3px 13px;
-    margin: 0 10px 0 10px;
     border: 0;
     color: white;
    }
