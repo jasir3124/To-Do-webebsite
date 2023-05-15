@@ -1,4 +1,6 @@
-
+// time variables 
+let time;
+let timeArray = [];
 
 // to-do variables
 let ToDoInput = document.querySelector('.ToDoInput')
@@ -78,6 +80,7 @@ toDoAdd.addEventListener('click', function(){
             let li = createListLocal(ToDo)
             let priorityCont = createPriorityCont()
             let delBtn = createDeleteButton()
+            let time = getTimeForToDo()
             listContainer.appendChild(li)
             li.appendChild(priorityCont)
             let priorityText = document.createElement('span')
@@ -99,6 +102,7 @@ toDoAdd.addEventListener('click', function(){
             priorityText.innerHTML = priority
             priorityCont.appendChild(priorityText)
             priorityCont.appendChild(delBtn)
+            priorityCont.appendChild(time)
             li.scrollIntoView({behavior: 'smooth', block:"center"})
             checkInView(li)
 
@@ -131,6 +135,11 @@ window.addEventListener('load', function(){
         priorityList.push(...priorityStorage)
     }
 
+    let timeStorage = JSON.parse(localStorage.getItem('time'))
+
+    if(timeStorage){
+        timeArray.push(...timeStorage)
+    }
     console.log(priorityList)
     console.log(itemList)
 
@@ -140,8 +149,10 @@ for (let i = 0; i < itemList.length; i++) {
     let delBtn = createDeleteButton()
     const priorityCont = createPriorityCont()
     const prioritySpan = document.createElement('span');
+    const timeText = document.createElement('span')
     li.setAttribute('class', 'listItem');
     li.innerText = itemList[i];
+    timeText.innerHTML = timeArray[i]
     let priorityClass;
     switch(priorityList[i]){
         case 'Urgent': priorityClass = 'toDoPriorityUrgent'
@@ -158,10 +169,24 @@ for (let i = 0; i < itemList.length; i++) {
     prioritySpan.innerHTML = priorityList[i];
     prioritySpan.setAttribute('class', priorityClass);
     priorityCont.appendChild(prioritySpan);
-    priorityCont.appendChild(delBtn)   
+    priorityCont.appendChild(delBtn)  
+    priorityCont.appendChild(timeText)
     listContainer.appendChild(li);
   }
 })
+
+// show time
+function getTimeForToDo(){
+    let date = new Date()
+    let hours =  date.getHours()
+    let minutes = date.getMinutes()
+    let time = hours.toString().padStart(2, '0') + ':' + minutes.toString().padStart(2, '0');
+    timeArray.push(time)
+    localStorage.setItem('time', JSON.stringify(timeArray))
+    let timeText = document.createElement('span')
+    timeText.innerHTML = time
+    return timeText
+}
 
 // shows username
 let usernameText = document.querySelector('.username')
@@ -206,6 +231,8 @@ function createDeleteButton(){
         localStorage.setItem('ToDo', JSON.stringify(itemList))
         priorityList.splice(index, 1)
         localStorage.setItem('priority', JSON.stringify(priorityList))
+        timeArray.splice(index, 1)
+        localStorage.setItem('time', JSON.stringify(timeArray))
         li.remove();
     });
     return delBtn;
