@@ -74,7 +74,7 @@ toDoAdd.addEventListener('click', function(){
         return
     } 
 
-
+            document.querySelector('.toDoError').style.visibility = 'hidden'
             itemList.push(ToDo)
             localStorage.setItem('ToDo', JSON.stringify(itemList))
             let li = createListLocal(ToDo)
