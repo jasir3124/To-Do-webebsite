@@ -65,11 +65,11 @@ toDoAdd.addEventListener('click', function(){
     ToDoInput.value = ''
 
 
-    if(ToDo == ''){
-        document.querySelector('.toDoError').style.visibility = 'visible'
-        return
-    } 
 
+    if (ToDo.trim() === '') {
+        document.querySelector('.toDoError').style.visibility = 'visible';
+        return;
+      }
             document.querySelector('.toDoError').style.visibility = 'hidden'
             itemList.push(ToDo)
             localStorage.setItem('ToDo', JSON.stringify(itemList))

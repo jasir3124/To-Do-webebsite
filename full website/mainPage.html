@@ -1,79 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.min.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.min.css" />
     <script src="bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="fa/css/all.css">
-    <link rel="stylesheet" href="mainPagestyle.css">
+    <link rel="stylesheet" href="fa/css/all.css" />
+    <link rel="stylesheet" href="mainPagestyle.css" />
     <title>Document</title>
-</head>
-<body>
-
+  </head>
+  <body>
     <div class="cont">
-        <div class="navLeft">
-            <div class="navContainer h-100">
-  <div  class="text-white d-flex flex-column flex-shrink-0 p-3" style="width: 280px; background-color: #131211;">
-    <a style="cursor: auto;" href="#" class="link-light d-flex align-items-center mb-3 mb-md-0 me-md-auto text-decoration-none">
-      <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
-      <span class="fs-4 menuTitle">TaskMate</span>
-    </a>
-    <hr>
-    <ul class="nav nav-pills flex-column mb-auto">
-      <li class="nav-item">
-        <div class="border-gradient">
-          <a href="#" class="link-light nav-link active-local" aria-current="page">
-            <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"/></svg>
-            Home
-          </a>
-        </div>
-      </li>
-      <li>
-        <a href="stickyWall.html" class="nav-link link-light">
-          <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"/></svg>
-          Sticky Wall
-        </a>
-      </li>
-    </ul>
-    <hr>
-      <h4 class="username ms-1"></h4> 
-  </div>
-            </div>
-        </div>
-    
-        <div class="ToDo w-100">
-            <div class="toDoInputDiv m-3 mt-5">
-                <div class="toDoInputHolder mt-3">
-                    <h5 class="inputTitle ms-3 mb-1">To-Do</h5>
-                      <div class=" inputGradient inputContainerLocal">
-                        <input type="text" class="p-2 ToDoInput">
-                        <div class="iconCont">
-                          <i class="priorityIcon pe-2 fa-solid fa-flag" style="color: transparent;"></i>
-                        </div>
-                      </div>
-                    <span class="toDoError">Please add a valid item!</span> 
-                    <div class="prioritet">
-                        <button class="prioBtn" onclick="setPriority()">Priority</button>
-                        <button class="addToDo">SAVE</button>
-                        <div class="optPriority">
-                            <span class="Priority urgent"><i class="pe-2 fa-solid fa-flag" style="color: red;"></i>Urgent<br><br></span>
-                            <span class="Priority high"><i class="pe-2 fa-solid fa-flag" style="color: #ffc107;"></i>High<br><br></span>
-                            <span class="Priority Normal"><i class="pe-2 fa-solid fa-flag" style="color: blue;"></i>Normal<br><br></span>
-                            <span class="Priority low"><i class="pe-2 fa-solid fa-flag" style="color: var(--bs-indigo);"></i>Low<br><br></span>
-                            <span class="Priority none"><i class="pe-2 fa-solid fa-flag" style="color: grey;"></i>None<br><br></span>
-                        </div>
-                    </div>
+      <div class="navLeft">
+        <div class="navContainer h-100">
+          <div
+            class="text-white d-flex flex-column flex-shrink-0 p-3"
+            style="width: 280px; background-color: #131211"
+          >
+            <a
+              style="cursor: auto"
+              href="#"
+              class="link-light d-flex align-items-center mb-3 mb-md-0 me-md-auto text-decoration-none"
+            >
+              <svg class="bi me-2" width="40" height="32">
+                <use xlink:href="#bootstrap" />
+              </svg>
+              <span class="fs-4 menuTitle">TaskMate</span>
+            </a>
+            <hr />
+            <ul class="nav nav-pills flex-column mb-auto">
+              <li class="nav-item">
+                <div class="border-gradient">
+                  <a
+                    href="#"
+                    class="link-light nav-link active-local"
+                    aria-current="page"
+                  >
+                    <svg class="bi me-2" width="16" height="16">
+                      <use xlink:href="#home" />
+                    </svg>
+                    Home
+                  </a>
                 </div>
-                    <span class="fs-4 listTitle">Task List</span>
-                    <hr>
-                    <div class="listContainer"></div>
-            </div>
+              </li>
+              <li>
+                <a href="stickyWall.html" class="nav-link link-light">
+                  <svg class="bi me-2" width="16" height="16">
+                    <use xlink:href="#speedometer2" />
+                  </svg>
+                  Sticky Wall
+                </a>
+              </li>
+            </ul>
+            <hr />
+            <h4 class="username ms-1"></h4>
+          </div>
         </div>
+      </div>
+
+      <div class="ToDo w-100">
+        <div class="toDoInputDiv m-3 mt-5">
+          <div class="toDoInputHolder mt-3">
+            <h5 class="inputTitle ms-3 mb-1">To-Do</h5>
+            <div class="inputGradient inputContainerLocal">
+              <input type="text" class="p-2 ToDoInput" />
+              <div class="iconCont">
+                <i
+                  class="priorityIcon pe-2 fa-solid fa-flag"
+                  style="color: transparent"
+                ></i>
+              </div>
+            </div>
+            <span class="toDoError">Please add a valid item!</span>
+            <div class="prioritet">
+              <button class="prioBtn" onclick="setPriority()">Priority</button>
+              <button class="addToDo">SAVE</button>
+              <div class="optPriority">
+                <span class="Priority urgent"
+                  ><i class="pe-2 fa-solid fa-flag" style="color: red"></i
+                  >Urgent<br /><br
+                /></span>
+                <span class="Priority high"
+                  ><i class="pe-2 fa-solid fa-flag" style="color: #ffc107"></i
+                  >High<br /><br
+                /></span>
+                <span class="Priority Normal"
+                  ><i class="pe-2 fa-solid fa-flag" style="color: blue"></i
+                  >Normal<br /><br
+                /></span>
+                <span class="Priority low"
+                  ><i
+                    class="pe-2 fa-solid fa-flag"
+                    style="color: var(--bs-indigo)"
+                  ></i
+                  >Low<br /><br
+                /></span>
+                <span class="Priority none"
+                  ><i class="pe-2 fa-solid fa-flag" style="color: grey"></i
+                  >None<br /><br
+                /></span>
+              </div>
+            </div>
+          </div>
+          <span class="fs-4 listTitle">Task List</span>
+          <hr />
+          <div class="listContainer"></div>
+        </div>
+      </div>
     </div>
-
-
 
     <!-- <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button> -->
     <button class="myBtn" onclick="topFunction()">
@@ -83,7 +118,6 @@
       <span></span> Back To Top
     </button>
 
-
     <script src="mainPage.js"></script>
-</body>
+  </body>
 </html>
