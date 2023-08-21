@@ -1,5 +1,4 @@
 
-
 function valid(event){
     event.preventDefault()
 
@@ -15,10 +14,6 @@ function valid(event){
      if(email.match(validEmailRegex) && password.match(validPasswordRegex)){
         window.location.href = ('mainPage.html')
         localStorage.setItem('username', JSON.stringify(username))
-        document.getElementById('passwordInput').style.border = '1.5px solid green'
-        document.getElementById('passwordError').style.display = 'none'
-        document.getElementById('emailInput').style.border = '1.5px solid green'
-        document.getElementById('emailError').style.display = 'none'
         return true
     } else if((!email.match(validEmailRegex)) && password.match(validPasswordRegex)){
         document.getElementById('emailInput').style.border = '1.5px solid #3d0b0b'

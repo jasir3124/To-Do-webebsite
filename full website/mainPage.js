@@ -35,31 +35,27 @@ document.querySelector('.optPriority').addEventListener('mouseleave', function()
 priorityUrgent.onclick = function(){
     priority = 'Urgent'
     document.querySelector('.optPriority').classList.remove('show')
-    priorityIcon.classList.add( 'pe-2', 'fa-solid', 'fa-flag')
     priorityIcon.setAttribute('style', 'color: red;')
 }
 priorityHigh.onclick = function(){
     priority = 'High'
     document.querySelector('.optPriority').classList.remove('show')
-    priorityIcon.classList.add('pe-2', 'fa-solid', 'fa-flag')
     priorityIcon.setAttribute('style', 'color: var(--bs-yellow);')
 }
 prioritNormal.onclick = function(){
     priority = 'Normal'
     document.querySelector('.optPriority').classList.remove('show')
-    priorityIcon.classList.add('pe-2', 'fa-solid', 'fa-flag')
     priorityIcon.setAttribute('style', 'color: blue;')
 }
 priorityLow.onclick = function(){
     priority = 'Low'
     document.querySelector('.optPriority').classList.remove('show')
-    priorityIcon.classList.add('pe-2', 'fa-solid', 'fa-flag')
     priorityIcon.setAttribute('style', 'color: var(--bs-indigo);')
 }
 priorityNone.onclick = function(){
     priority = 'None'
     document.querySelector('.optPriority').classList.remove('show')
-    priorityIcon.classList.remove('pe-2', 'fa-solid', 'fa-flag')
+    priorityIcon.setAttribute('style', 'color: transparent;')
 }
 
 
