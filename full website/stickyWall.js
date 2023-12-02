@@ -177,3 +177,31 @@ function iconDelete3() {
   });
   return icon3;
 }
+
+
+
+let openNavbarBTn = document.querySelector(".openNavbarTopCollapseBtn");
+let navbar = document.querySelector(".navbarTopCollapse");
+let closeNavbarBtn = document.querySelector(".closeNavbarTopCollapseBtn");
+
+openNavbarBTn.addEventListener("click", function (e) {
+  e.stopPropagation();
+  navbar.style.display = "block";
+  openNavbarBTn.style.display = "none";
+  navbar.classList.add("open");
+});
+
+closeNavbarBtn.addEventListener("click", function (e) {
+  navbar.style.display = "none";
+  openNavbarBTn.style.display = "block";
+  navbar.classList.remove("open");
+});
+
+document.addEventListener("click", function handleClickOutsideBox(event) {
+  let value = navbar.classList.contains("open");
+  console.log(value);
+  if (!navbar.contains(event.target) && value) {
+    navbar.style.display = "none";
+    openNavbarBTn.style.display = "block";
+  }
+});

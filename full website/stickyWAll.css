@@ -67,20 +67,25 @@ body{
     margin-left: 20px;
     font-size: 3rem;
 }
+.stickyWallContainer{
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    gap: 30px;
+}
 .stickyWall1{
-    width: 30%;
+    width: 100%;
     background-color: rgba(255, 255, 0, 0.5);
     min-height: 300px;
     padding: 20px;
 }
 .stickyWall2{
-    width: 30%;
+    width: 100%;
     background-color: 	rgba(173,216,230, 0.7);
     min-height: 300px;
     padding: 20px;
 }
 .stickyWall3{
-    width: 30%;
+    width: 100%;
     background-color: rgba(199, 77, 183, 0.5);
     min-height: 300px;
     padding: 20px;
@@ -153,22 +158,65 @@ body{
     bottom: 3px;
     cursor: pointer;
 }
-@media only screen and (max-width:750px){
-    .navLeft{
-        display: none !important;
-    }
-    .navbarTop{
-        display:  flex !important;
-    }
-    .linkCont{
-        align-items: center;
-    }
-    .linkCont a{
-        text-decoration: none;
-        color: white;
+.navbarTopCollapse {
+    z-index: 999;
+    display: none;
+    background-color: black;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 150px;
+    padding-left: 23px;
+    padding-top: 20px;
+    box-shadow: -200px 0px 83px 59px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: -200px 0px 83px 59px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -200px 0px 83px 59px rgba(0, 0, 0, 0.75);
+  }
+  .navbarTopCollapse a {
+    color: white;
+    text-decoration: none;
+  }
+  .navbarTopCollapseBtn {
+    display: none;
+  }
+  .openNavbarTopCollapseBtn {
+    display: none;
+  }
 
+  @media  screen and (max-width:1000px) {
+    .stickyWallContainer{
+        grid-template-columns: 47% 47%;
     }
-    .cont{
-        display: block;
+  }
+  @media only screen and (max-width: 750px) {
+    .navLeft {
+      display: none !important;
     }
-}       
+    .navbarTop {
+      display: flex !important;
+    }
+    .linkCont {
+      align-items: center;
+    }
+    .linkCont a {
+      text-decoration: none;
+      color: white;
+    }
+    .cont {
+      display: block;
+    }
+  }
+
+@media screen and (max-width: 500px) {
+    .linkCont {
+      display: none !important;
+    }
+    .openNavbarTopCollapseBtn {
+      display: flex;
+      align-self: center;
+    }
+    .stickyWallContainer{
+        grid-template-columns: 95%;
+    }
+  }
