@@ -1,89 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.min.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.min.css" />
     <script src="bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="fa/css/all.css">
-    <link rel="stylesheet" href="stickyWAll.css">
+    <link rel="stylesheet" href="fa/css/all.css" />
+    <link rel="stylesheet" href="stickyWAll.css" />
     <title>Document</title>
-</head>
-<body>
-    
-
+  </head>
+  <body>
     <div class="cont">
-    <!-- Nav -->
-    <div class="navLeft d-flex flex-column flex-shrink-0 p-3 h-100" style="width: 280px; background-color: #131211;">
-        <a style="cursor: auto;" href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-light text-decoration-none">
-          <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+      <!-- Nav -->
+      <div
+        class="navLeft d-flex flex-column flex-shrink-0 p-3 h-100"
+        style="width: 280px; background-color: #131211"
+      >
+        <a
+          style="cursor: auto"
+          href="#"
+          class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-light text-decoration-none"
+        >
+          <svg class="bi me-2" width="40" height="32">
+            <use xlink:href="#bootstrap" />
+          </svg>
           <span class="fs-4 menuTitle">TaskMate</span>
         </a>
-        <hr>
+        <hr />
         <ul class="nav nav-pills flex-column mb-auto">
           <li class="nav-item">
-            <a href="mainPage.html" class="nav-link link-light" aria-current="page">
-              <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"/></svg>
+            <a
+              href="mainPage.html"
+              class="nav-link link-light"
+              aria-current="page"
+            >
+              <svg class="bi me-2" width="16" height="16">
+                <use xlink:href="#home" />
+              </svg>
               Home
             </a>
           </li>
           <li>
             <div class="active-gradient">
-                <a href="#" class="nav-link link-light fw-bold">
-                  <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"/></svg>
-                  Sticky Wall
-                </a>
+              <a href="#" class="nav-link link-light fw-bold">
+                <svg class="bi me-2" width="16" height="16">
+                  <use xlink:href="#speedometer2" />
+                </svg>
+                Sticky Wall
+              </a>
             </div>
           </li>
         </ul>
-        <hr>
+        <hr />
         <h4 class="username ms-1"></h4>
+      </div>
+
+      <div class="navbarTop d-flex p-3 justify-content-between">
+        <h1 class="fs-4 menuTitle">Taskmate</h1>
+        <div class="linkCont d-flex gap-5">
+          <a class="fs-5 linkActivePhone" href="#">Home</a>
+          <a class="fs-5" href="stickyWall.html">Sticky wall</a>
         </div>
-        
+      </div>
 
-
-        <!-- Sticky wall -->
-        <div class="stickyWall">
-            <h1 class="title">Sticky wall</h1>
-            <hr class="">
-            <div class="stickyWallContainer d-inline w-100">
-                <div class="stickyWall1 float-start me-3">
-                  <div class="holeCont"> <div class="hole"></div> <div class="hole"></div> </div>
-                    <h3 class="stickyWallName">Home</h3>
-                    <div style="display: flex;">
-                        <input type="text" class="stickyWallInput1"><button class="stickyNoteAddBtn1">Add</button>
-                    </div>
-                    <span class="inputError1">Please add a valid input</span>
-                    <ul class="listContainer1">
-
-                    </ul>
-                  </div>
-                <div class="stickyWall2 float-start me-3">
-                  <div class="holeCont"> <div class="hole"></div> <div class="hole"></div> </div>
-                    <h3 class="stickyWallName">School</h3>
-                    <div style="display: flex;">
-                        <input type="text" class="stickyWallInput2"><button class="stickyNoteAddBtn2">Add</button>
-                    </div>
-                    <span class="inputError2">Please add a valid input</span>
-                    <ul class="listContainer2">
-
-                    </ul>
-                  </div>
-                <div class="stickyWall3 float-start ">
-                  <div class="holeCont"> <div class="hole"></div> <div class="hole"></div> </div>
-                    <h3 class="stickyWallName">Work</h3>
-                    <div style="display: flex;">
-                        <input type="text" class="stickyWallInput3"><button class="stickyNoteAddBtn3">Add</button>
-                    </div>
-                    <span class="inputError3">Please add a valid input</span>
-                    <ul class="listContainer3">
-
-                    </ul>
-                </div>
+      <!-- Sticky wall -->
+      <div class="stickyWall">
+        <h1 class="title">Sticky wall</h1>
+        <hr class="" />
+        <div class="stickyWallContainer d-inline w-100">
+          <div class="stickyWall1 float-start me-3">
+            <div class="holeCont">
+              <div class="hole"></div>
+              <div class="hole"></div>
             </div>
+            <h3 class="stickyWallName">Home</h3>
+            <div style="display: flex">
+              <input type="text" class="stickyWallInput1" /><button
+                class="stickyNoteAddBtn1"
+              >
+                Add
+              </button>
+            </div>
+            <span class="inputError1">Please add a valid input</span>
+            <ul class="listContainer1"></ul>
+          </div>
+          <div class="stickyWall2 float-start me-3">
+            <div class="holeCont">
+              <div class="hole"></div>
+              <div class="hole"></div>
+            </div>
+            <h3 class="stickyWallName">School</h3>
+            <div style="display: flex">
+              <input type="text" class="stickyWallInput2" /><button
+                class="stickyNoteAddBtn2"
+              >
+                Add
+              </button>
+            </div>
+            <span class="inputError2">Please add a valid input</span>
+            <ul class="listContainer2"></ul>
+          </div>
+          <div class="stickyWall3 float-start">
+            <div class="holeCont">
+              <div class="hole"></div>
+              <div class="hole"></div>
+            </div>
+            <h3 class="stickyWallName">Work</h3>
+            <div style="display: flex">
+              <input type="text" class="stickyWallInput3" /><button
+                class="stickyNoteAddBtn3"
+              >
+                Add
+              </button>
+            </div>
+            <span class="inputError3">Please add a valid input</span>
+            <ul class="listContainer3"></ul>
+          </div>
         </div>
+      </div>
     </div>
     <script src="stickyWall.js"></script>
-</body>
+  </body>
 </html>

@@ -46,6 +46,15 @@ body{
 .navLeft{
     background-color: #e6eaec;
 }
+.navbarTop{
+    background-color: #131211;
+    height: fit-content;
+    display: none !important;
+    width: 100%;
+}
+.linkActivePhone{
+    font-weight: 700;
+}
 .cont{
     display: flex;
     height: 100%;
@@ -144,3 +153,22 @@ body{
     bottom: 3px;
     cursor: pointer;
 }
+@media only screen and (max-width:750px){
+    .navLeft{
+        display: none !important;
+    }
+    .navbarTop{
+        display:  flex !important;
+    }
+    .linkCont{
+        align-items: center;
+    }
+    .linkCont a{
+        text-decoration: none;
+        color: white;
+
+    }
+    .cont{
+        display: block;
+    }
+}       

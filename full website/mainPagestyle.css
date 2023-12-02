@@ -48,6 +48,15 @@ body{
     border-radius: 10px;
     height: 100%;
 }
+.navbarTop{
+    background-color: #131211;
+    height: fit-content;
+    display: none !important;
+    width: 100%;
+}
+.linkActivePhone{
+    font-weight: 700;
+}
 .navContainer{
     display: grid;
 }
@@ -359,9 +368,33 @@ body{
     width: fit-content;
     padding: 7px;
 }
+.navbarTopCollapse{
+    display: none;
+}
+.navbarTopCollapseBtn{
+    display: none;
+}
 @media only screen and (max-width: 1030px){
     .ToDoInput{
         width: 90%;
+    }
+}
+@media only screen and (max-width:750px){
+    .navLeft{
+        display: none !important;
+    }
+    .navbarTop{
+        display:  flex !important;
+    }
+    .linkCont{
+        align-items: center;
+    }
+    .linkCont a{
+        text-decoration: none;
+        color: white;
+    }
+    .cont{
+        display: block;
     }
 }
 @media only screen and (max-width:705px){
@@ -372,5 +405,14 @@ body{
 @media only screen and (max-width:615px){
     .deleteBtn{
         margin: 0;
+    }
+}
+@media screen and (max-width:500px) {
+    .linkCont{
+        display: none !important;
+    }
+    .navbarTopCollapseBtn{
+        display: flex;
+        align-self: center;
     }
 }
